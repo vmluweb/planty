@@ -1,16 +1,15 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html <?php language_attributes(); ?> <?php blankslate_schema_type(); ?>>
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="<?php bloginfo('charset'); ?>" />
+    <meta name="viewport" content="width=device-width" />
     <?php wp_head(); ?>
 </head>
 
 <body>
     <div class="container">
-        <header class="header">
+        <header class="header-container">
             <div id="branding">
                 <!-- Insertion logo -->
                 <?php if (get_custom_logo()) :

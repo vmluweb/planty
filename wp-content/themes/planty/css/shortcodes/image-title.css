@@ -1,0 +1,39 @@
+@import url(../theme.css);
+
+/* Style pour le shortcode .image-title */
+.image-title {
+  height: 18.25rem;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--primary-color);
+  text-transform: uppercase;
+}
+
+.productsHomeImageTitle {
+  font-size: 48px;
+  font-weight: 800;
+  margin: 0 50px;
+  text-align: center;
+  color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+  .image-title {
+    width: 393px;
+  }
+}
+@media (max-width: 360px) {
+  .image-title {
+    width: 360px;
+  }
+
+  .productsHomeImageTitle {
+    font-size: 38px;
+    word-break: break-all;
+  }
+}

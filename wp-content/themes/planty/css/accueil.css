@@ -1,0 +1,147 @@
+/* Importation of URL theme style for add color without duplicate code */
+@import url(./theme.css);
+
+/* Banner */
+#banner {
+  width: 100%;
+  height: 40%;
+  position: relative;
+  background-color: var(--main-bg-color);
+  border-bottom-left-radius: 50% 9.5%;
+  border-bottom-right-radius: 50% 9.5%;
+  border-bottom: 10px solid var(--shadow-color);
+  overflow: hidden;
+}
+
+#bannerWrapper {
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-bg-color);
+  border-bottom-left-radius: 50% 9.5%;
+  border-bottom-right-radius: 50% 9.5%;
+  overflow: hidden;
+}
+
+/* About us */
+#aboutUs {
+  margin-bottom: 82px;
+}
+
+/* Products */
+#productsHome {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--main-bg-color);
+  position: relative;
+  background-color: var(--main-bg-color);
+  border-bottom-left-radius: 50% 1.5%;
+  border-bottom-right-radius: 50% 1.5%;
+  overflow: hidden;
+}
+
+#productsHomeTitle {
+  color: var(--red-color);
+  background-color: var(--main-bg-color);
+}
+
+#productsHomeText {
+  padding-top: 7px;
+  padding-bottom: 49px;
+  background-color: var(--main-bg-color);
+}
+
+#productsHomeContainer {
+  max-width: 816px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 47px;
+}
+
+#productsHomeWrapper {
+  background-color: var(--main-bg-color);
+}
+
+/* .productsHomeColumns {
+  display: flex;
+  justify-content: center;
+} */
+
+#productsHomeColumnLeft {
+  margin-right: 17.5px;
+}
+
+#productsHomeColumnRight {
+  margin-left: 17.5px;
+}
+
+#productsHomeStrawberry {
+  margin-bottom: 40px;
+}
+
+#productsHomeGrapeFruit {
+  margin-bottom: 40px;
+}
+
+#productsHomeRaspberry .productsHomeImageTitle {
+  margin: 0 50px;
+}
+
+#productsHomeButton {
+  margin-bottom: 49px;
+}
+
+/* Testimony */
+#testimonyTitle {
+  color: var(--secondary-color);
+}
+
+.testimonySubTitle {
+  color: var(--secondary-color);
+}
+
+#bannerBottom {
+  width: 100%;
+  padding: 0;
+}
+
+#bannerBottomImage {
+  height: auto;
+  width: 100%;
+  overflow: hidden;
+}
+
+@media (max-width: 784px) {
+  #productsHomeContainer {
+    width: 393px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #productsHomeColumnLeft {
+    width: 100%;
+    margin: 0 0 35px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #productsHomeColumnRight {
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 360px) {
+  #productsHomeText {
+    display: flex;
+    flex: row wrap;
+    overflow: hidden;
+  }
+}
