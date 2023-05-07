@@ -12,102 +12,47 @@
 }
 
 /* FORMULAIRE DE PRECOMMANDE */
-#orderForm {
-  display: flex;
-  flex-direction: column;
-}
-
 .quantityWrapper {
-  /* width: 192.53px; */
-  max-height: 56px;
-  padding: 0;
-  margin: 0;
   display: flex;
-  flex-direction: row;
+  width: 100%;
   justify-content: space-between;
-  align-items: center;
 }
 
 .quantityColumnsWrapper {
   width: 192.53px;
+  height: 56px !important;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  /* gap: 20px; */
-  overflow: hidden;
   align-items: center;
 }
 
 .quantityColumnLeft {
   display: flex;
-  align-items: center;
+  /* margin-top: 58px; */
 }
 
-.quantityColumnLeft p {
-  /* width: 65%; */
+.quantityColumnRight {
   display: flex;
+  border-radius: 5px;
   justify-content: center;
   align-self: center;
-  margin: 0;
-  padding: 0;
-  /* overflow: hidden; */
-}
-
-.quantityColumnLabel {
-  padding: 0;
-  margin: 0;
-}
-
-.quantityColumnLabel span {
-  /* padding: 6px 0 0 0; */
-  margin: 0;
-}
-
-.quantityColumnLabel span .quantitySelected {
-  /* width: 100%; */
-  /* max-height: 56px; */
-  /* max-width: 192.53px; */
-  display: flex;
-  margin: 0;
 }
 
 .quantitySelected::-webkit-outer-spin-button,
 .quantitySelected::-webkit-inner-spin-button {
   -webkit-appearance: none;
-  margin: 0;
-  padding: 0;
   border: none;
-  /* width: 10px; */
 }
 
-.quantitySelected {
-  display: flex;
-  /* max-height: 56px; */
-  margin-right: 10px;
-  border: 0;
-  padding: 0;
-  margin-bottom: 0;
-  margin-top: 0;
-  border-radius: 4px 4px 4px 4px;
-}
-
-::placeholder {
-  color: var(--main-color);
-  font-size: 1.5rem;
-  font-weight: 600;
-  /* text-align: center; */
-  padding: 0 auto;
-  align-items: center;
-}
-
-.quantitySymbol p {
+.quantitySymbols p {
   width: 25px;
+  height: 56px;
+  margin-top: 22px;
   position: absolute;
-  /* top: 10px;
-  right: 635px; */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  text-align: center;
   align-items: center;
 }
 
@@ -115,27 +60,31 @@
   display: flex;
   justify-content: center;
   width: 100%;
+  height: 100%;
   align-items: center;
   align-self: center;
-  /* padding: 0 auto; */
   background-color: var(--bg-color);
+  margin-right: 50px;
 }
 
 .plus {
+  border-radius: 0 4px 0 0;
   border-bottom: 1px solid var(--primary-color);
 }
 
+.minus {
+  border-radius: 0 0 4px 0;
+}
+
 .quantityValidatedButton {
-  /* height: 45px; */
-  /* width: 145px; */
+  display: flex;
+  justify-content: flex-end;
   text-transform: uppercase;
   color: var(--primary-color);
-  background-color: var(--bg-color);
-  padding: 15px 39px 16px 39px;
+  background-color: var(--button-bg-order-color);
+  /* margin-top: 39px; */
+  padding: 21px 35px 21px 35px;
   border-radius: 5px;
-  align-self: center;
-  margin-top: 0;
-  /* padding-top: 2px; */
 }
 
 .quantityValidatedButton:hover {
@@ -146,15 +95,13 @@
 .deliveryInfo {
   width: 100%;
   display: flex;
-  margin-top: 39px;
+  margin-top: 40px;
   font-family: "Syne", sans-serif;
   color: var(--primary-color);
   justify-content: space-between;
+  border-top: 1px solid var(--primary-color);
+  padding-top: 50px;
 }
-
-/* .deliveryInfoColumnsWrapper {
-  width: 100%;
-} */
 
 .deliveryInfoTitles {
   font-size: 30px;
@@ -163,7 +110,6 @@
 }
 
 .inputShop {
-  /* width: 292px; */
   width: 100%;
   font-size: 20px;
   font-weight: 400;
@@ -172,7 +118,8 @@
 .labelOrderForm {
   display: flex;
   justify-content: start;
-  padding-left: 20px;
+  padding-top: 20px;
+  /* padding-left: 20px; */
   font-family: "Syne", sans-serif;
   font-size: 20px;
   font-weight: 400;
@@ -184,8 +131,6 @@
   display: flex;
   flex-direction: column;
   align-content: center;
-
-  /* margin: 0 50px; */
 }
 
 #infoColumnLeft {
@@ -196,14 +141,13 @@
 
 #infoColumnRight {
   width: 50%;
-  border-left: 1px solid var(--primary-color);
   padding-left: 30px;
 }
 
 #shop-submit {
   background-color: var(--bg-color);
   margin-top: 64px;
-  /* margin: 0 auto; */
+  margin-bottom: 93px;
 }
 
 #shop-submit:hover {

@@ -62,11 +62,6 @@
   background-color: var(--main-bg-color);
 }
 
-/* .productsHomeColumns {
-  display: flex;
-  justify-content: center;
-} */
-
 #productsHomeColumnLeft {
   margin-right: 17.5px;
   padding-top: 0;
@@ -74,7 +69,6 @@
 
 #productsHomeColumnRight {
   margin-left: 17.5px;
-  /* margin-bottom: 40px; */
 }
 
 #productsHomeStrawberry {
@@ -124,6 +118,7 @@
 #bannerBottom {
   background-color: var(--main-bg-color);
 }
+
 @media (max-width: 784px) {
   #productsHomeContainer {
     width: 393px;

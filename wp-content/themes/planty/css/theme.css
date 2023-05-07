@@ -20,6 +20,7 @@ html {
   --red-color: #d2776a;
   --shadow-color: #00000010;
   --button-bg-color: #c02e44;
+  --button-bg-order-color: #e0b9b4;
 }
 
 body {
@@ -54,10 +55,12 @@ li {
   width: 100%;
   height: 80px;
   display: flex;
+  /* flex-wrap: wrap; */
   color: var(--primary-color);
 }
 
 #branding {
+  width: 191.61px;
   height: 100%;
   display: flex;
   padding-left: 37px;
@@ -107,12 +110,12 @@ li {
   font-family: "Syne", sans-serif;
   font-size: 16px;
   font-weight: 400;
-  transition: all ease-out 0.3s;
+  transition: all ease-in-out 0.1s;
 }
 
 .menu-item a span:hover {
   font-weight: 700;
-  flex-grow: 0;
+  font-size: 13px;
 }
 
 #menu-item-43 {
@@ -148,4 +151,91 @@ li {
 #menu-item-55 {
   font-size: 16px;
   font-weight: 400;
+}
+
+@media (max-width: 824px) {
+  .custom-logo-link {
+    width: 90%;
+    overflow: hidden;
+  }
+
+  .custom-logo {
+    width: 90%;
+  }
+
+  #menu {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  #menu-principal {
+    width: 100%;
+    display: flex;
+    word-wrap: normal;
+  }
+
+  #menu-principal .menu-item {
+    width: 100%;
+  }
+
+  .menu-item a {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .menu-item a span {
+    display: flex;
+    padding: 0;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 393px) {
+  .header-container {
+    display: flex;
+  }
+
+  #branding {
+    /* width: 80%; */
+    overflow: hidden;
+  }
+
+  .custom-logo-link {
+    width: 80%;
+    overflow: hidden;
+  }
+
+  .custom-logo {
+    width: 80%;
+  }
+
+  #menu {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  #menu-principal {
+    width: 100%;
+    display: flex;
+    word-wrap: normal;
+  }
+
+  #menu-principal .menu-item {
+    width: 100%;
+  }
+
+  .menu-item a {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .menu-item a span {
+    display: flex;
+    padding: 0;
+    font-size: 10px;
+  }
 }
