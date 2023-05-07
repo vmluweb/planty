@@ -4,8 +4,8 @@
 /* Style pour le shortcode .image-title */
 #image-title-home {
   height: 18.25rem;
-  max-width: 24.563rem;
-  object-fit: contain;
+  /* width: 24.563rem; */
+  width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -20,12 +20,22 @@
   font-family: "Syne", sans-serif;
   font-size: 48px;
   font-weight: 800;
-  margin: 0 50px;
+  margin: 0 auto;
   text-align: center;
   color: var(--primary-color);
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 1024px) {
+  #image-title-home {
+    width: 90%;
+  }
+
+  .productsHomeImageTitle {
+    font-size: 90%;
+    word-break: break-all;
+  }
+} */
+/* @media (max-width: 768px) {
   #image-title-home {
     width: 393px;
   }
@@ -39,4 +49,4 @@
     font-size: 38px;
     word-break: break-all;
   }
-}
+} */
