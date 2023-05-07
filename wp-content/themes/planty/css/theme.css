@@ -1,7 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&display=swap");
 @import url(./accueil.css);
+@import url(./nous-rencontrer.css);
+@import url(./commander.css);
+
 * {
   font-family: "Syne", sans-serif;
+}
+
+html {
+  height: 100%;
 }
 
 :root {
@@ -12,6 +19,7 @@
   --secondary-color: #3b8e46;
   --red-color: #d2776a;
   --shadow-color: #00000010;
+  --button-bg-color: #c02e44;
 }
 
 body {
@@ -96,13 +104,24 @@ li {
   color: var(--main-color);
   padding: 0 60px;
   align-items: center;
+  font-family: "Syne", sans-serif;
   font-size: 16px;
   font-weight: 400;
+  transition: all ease-out 0.3s;
+}
+
+.menu-item a span:hover {
+  font-weight: 700;
+  flex-grow: 0;
 }
 
 #menu-item-43 {
   background-color: var(--bg-color);
   order: 3;
+}
+
+#menu-item-43:hover {
+  background-color: var(--button-bg-color);
 }
 
 #menu-item-43 a span {
@@ -118,6 +137,7 @@ li {
 .footer {
   bottom: 0;
 }
+
 #menu-menu-footer {
   width: 100%;
   height: 60px;
