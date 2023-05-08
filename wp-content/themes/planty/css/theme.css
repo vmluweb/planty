@@ -1,7 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&display=swap");
-@import url(./accueil.css);
-@import url(./nous-rencontrer.css);
-@import url(./commander.css);
 
 * {
   font-family: "Syne", sans-serif;
@@ -153,6 +150,404 @@ li {
   font-weight: 400;
 }
 
+/* Banner */
+#banner {
+  width: 100%;
+  height: 40%;
+  position: relative;
+  background-color: var(--main-bg-color);
+  border-bottom-left-radius: 50% 9.5%;
+  border-bottom-right-radius: 50% 9.5%;
+  border-bottom: 10px solid var(--shadow-color);
+  overflow: hidden;
+}
+
+#bannerWrapper {
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-bg-color);
+  border-bottom-left-radius: 50% 9.5%;
+  border-bottom-right-radius: 50% 9.5%;
+  overflow: hidden;
+}
+
+#home-title {
+  font-family: "Syne", sans-serif;
+  font-size: 38px;
+  font-weight: 800;
+}
+
+/* About us */
+#aboutUs {
+  margin-bottom: 82px;
+}
+
+/* Products */
+#productsHome {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  background-color: var(--main-bg-color);
+  border-bottom-left-radius: 50% 9.5%;
+  border-bottom-right-radius: 50% 9.5%;
+  overflow: hidden;
+}
+
+#productsHomeTitle {
+  color: var(--red-color);
+  background-color: var(--main-bg-color);
+}
+
+#productsHomeText {
+  display: flex;
+  flex: row wrap;
+  justify-content: center;
+  padding-top: 7px;
+  padding-bottom: 49px;
+  background-color: var(--main-bg-color);
+}
+
+#productsHomeContainer {
+  /* max-width: 816px; */
+  width: 887.19px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin: 0 auto; */
+}
+
+#productsHomeWrapper {
+  width: 887.19px;
+  background-color: var(--main-bg-color);
+}
+
+#productsHomeColumnLeft {
+  margin-right: 17.5px;
+  padding-top: 0;
+}
+
+#productsHomeColumnRight {
+  margin-left: 17.5px;
+}
+
+#productsHomeStrawberry {
+  margin-bottom: 40px;
+}
+
+#productsHomeGrapeFruit {
+  margin-bottom: 40px;
+}
+
+#productsHomeRaspberry .productsHomeImageTitle {
+  margin: 0 50px;
+}
+
+#productsHomeButton {
+  margin-top: 47px;
+  margin-bottom: 49px;
+  background-color: var(--bg-color);
+  color: var(--primary-color);
+}
+
+#productsHomeButton:hover {
+  color: var(--primary-color);
+  background-color: var(--button-bg-color);
+}
+
+/* Testimony */
+#testimonyTitle {
+  color: var(--secondary-color);
+}
+
+.testimonySubTitle {
+  color: var(--secondary-color);
+}
+
+.bannerBottom {
+  width: 100%;
+  padding: 0;
+}
+
+.bannerBottomImage {
+  /* height: auto; */
+  width: 100%;
+  overflow: hidden;
+}
+
+#bannerBottom {
+  background-color: var(--main-bg-color);
+}
+
+/* Meet us */
+#meetUs {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: var(--main-bg-color);
+  border-bottom-left-radius: 50% 1.5%;
+  border-bottom-right-radius: 50% 1.5%;
+  overflow: hidden;
+}
+
+#meetUsTitle {
+  color: var(--red-color);
+}
+
+#team {
+  overflow-x: hidden;
+}
+
+#teamRightColumn {
+  overflow: hidden;
+}
+
+#teamBranchImage {
+  overflow: hidden;
+}
+
+#contact {
+  background-color: var(--main-bg-color);
+}
+
+#contactMainColumnForm {
+  max-width: 393px;
+}
+
+.labelForm {
+  display: flex;
+  justify-content: start;
+}
+
+.labelForm span {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#form-submit {
+  padding: 20px 70px;
+  color: var(--primary-color);
+  background-color: var(--bg-color);
+}
+
+#form-submit:hover {
+  background-color: var(--button-bg-color);
+}
+
+#bannerBottomMeetUs {
+  background-color: var(--main-bg-color);
+}
+
+/* Order */
+#shop,
+#shopImage {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+#shopImage {
+  padding-bottom: 5px;
+}
+
+/* FORMULAIRE DE PRECOMMANDE */
+.quantityWrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.quantityColumnsWrapper {
+  width: 192.53px;
+  height: 56px !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.quantityColumnLeft {
+  display: flex;
+  /* margin-top: 58px; */
+}
+
+.quantityColumnRight {
+  display: flex;
+  border-radius: 5px;
+  justify-content: center;
+  align-self: center;
+}
+
+.quantitySelected::-webkit-outer-spin-button,
+.quantitySelected::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  border: none;
+}
+
+.quantitySymbols p {
+  width: 25px;
+  height: 56px;
+  margin-top: 22px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.symbol {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  align-self: center;
+  background-color: var(--bg-color);
+  margin-right: 50px;
+}
+
+.plus {
+  border-radius: 0 4px 0 0;
+  border-bottom: 1px solid var(--primary-color);
+}
+
+.minus {
+  border-radius: 0 0 4px 0;
+}
+
+.quantityValidatedButton {
+  display: flex;
+  justify-content: flex-end;
+  text-transform: uppercase;
+  color: var(--primary-color);
+  background-color: var(--button-bg-order-color);
+  /* margin-top: 39px; */
+  padding: 21px 35px 21px 35px;
+  border-radius: 5px;
+}
+
+.quantityValidatedButton:hover {
+  background-color: var(--button-bg-color);
+}
+
+/* INFORMATION ET LIVRAISON */
+.deliveryInfo {
+  width: 100%;
+  display: flex;
+  margin-top: 40px;
+  font-family: "Syne", sans-serif;
+  color: var(--primary-color);
+  justify-content: space-between;
+  border-top: 1px solid var(--primary-color);
+  padding-top: 50px;
+}
+
+.deliveryInfoTitles {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 39px;
+}
+
+.inputShop {
+  width: 100%;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.labelOrderForm {
+  display: flex;
+  justify-content: start;
+  padding-top: 20px;
+  /* padding-left: 20px; */
+  font-family: "Syne", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  overflow: hidden;
+}
+
+.deliveryInfoColumnsWrapper p > span {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+#infoColumnLeft {
+  width: 50%;
+  border-right: 1px solid #ffffff;
+  padding-right: 30px;
+}
+
+#infoColumnRight {
+  width: 50%;
+  padding-left: 30px;
+}
+
+#shop-submit {
+  background-color: var(--bg-color);
+  margin-top: 64px;
+  margin-bottom: 93px;
+}
+
+#shop-submit:hover {
+  background-color: var(--button-bg-color);
+}
+
+@media (max-width: 1024px) {
+  #banner {
+    border-bottom-left-radius: 50% 5.5%;
+    border-bottom-right-radius: 50% 5.5%;
+  }
+
+  #aboutUsTitle {
+    margin-top: 4em;
+    margin-bottom: 2em;
+  }
+
+  #productsHome {
+    border-bottom-left-radius: 50% 5.5%;
+    border-bottom-right-radius: 50% 5.5%;
+  }
+
+  #productsHomeTitle {
+    max-width: 326px;
+  }
+
+  #productsHomeContainer {
+    display: flex;
+    width: 326.59px;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  #productsHomeWrapper {
+    width: 326.59px;
+    background-color: var(--main-bg-color);
+    overflow: hidden;
+  }
+
+  #productsHomeColumnLeft {
+    width: 100%;
+    padding-top: 0;
+    margin-right: 5px;
+  }
+
+  #productsHomeColumnRight {
+    width: 100%;
+    margin-left: 0px;
+    margin-top: 17.5px;
+  }
+
+  #productsHomeImageTitle {
+    font-size: 38px;
+    text-align: center;
+  }
+}
+
 @media (max-width: 824px) {
   .custom-logo-link {
     width: 90%;
@@ -189,6 +584,54 @@ li {
     display: flex;
     padding: 0;
     font-size: 12px;
+  }
+
+  #home-title {
+    font-size: 1.75rem;
+  }
+
+  #productsHome {
+    border-bottom-left-radius: 50% 3.5%;
+    border-bottom-right-radius: 50% 3.5%;
+  }
+}
+
+@media (max-width: 784px) {
+  /* #productsHomeContainer {
+    width: 393px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #productsHomeColumnLeft {
+    width: 100%;
+    margin: 0 0 35px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #productsHomeColumnRight {
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  } */
+}
+
+@media (max-width: 767px) {
+  /* #banner {
+    80%
+  } */
+  .testimonyText p {
+    max-width: 210.65px;
+    margin: 0 auto;
+  }
+
+  #home-title {
+    font-size: 25px;
   }
 }
 
@@ -237,5 +680,11 @@ li {
     display: flex;
     padding: 0;
     font-size: 10px;
+  }
+
+  #productsHomeText {
+    display: flex;
+    flex: row wrap;
+    overflow: hidden;
   }
 }
