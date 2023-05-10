@@ -1,3 +1,17 @@
+/************ SUMMARY ************/
+/*********************************/
+/**** 01_GENERAL_SETTINGS ****/
+/**** 02_NAVIGATION ****/
+/**** 03_HOME ****/
+/**** 04_MEET_US ****/
+/**** 05_ORDER ****/
+/**** 06_LARGE_SCREEN_RESPONSIVE ****/
+/**** 07_MEDIUM_SCREEN_RESPONSIVE ****/
+/**** 08_SMALL_SCREEN_RESPONSIVE ****/
+/*********************************/
+/*********************************/
+
+/**** 01_GENERAL_SETTINGS ****/
 @import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&display=swap");
 
 * {
@@ -74,7 +88,7 @@ li {
   height: 18.87px;
 }
 
-/* NAVIGATION */
+/*** 02_NAVIGATION ***/
 #menu {
   width: 100%;
   display: flex;
@@ -150,24 +164,12 @@ li {
   font-weight: 400;
 }
 
+/**** 03_HOME ****/
 /* Banner */
 #banner {
-  width: 100%;
-  height: 40%;
   position: relative;
   background-color: var(--main-bg-color);
-  border-bottom-left-radius: 50% 9.5%;
-  border-bottom-right-radius: 50% 9.5%;
-  border-bottom: 10px solid var(--shadow-color);
-  overflow: hidden;
-}
-
-#bannerWrapper {
-  width: 100%;
-  height: 100%;
-  background-color: var(--main-bg-color);
-  border-bottom-left-radius: 50% 9.5%;
-  border-bottom-right-radius: 50% 9.5%;
+  /* border-bottom: 10px solid var(--shadow-color); */
   overflow: hidden;
 }
 
@@ -175,15 +177,17 @@ li {
   font-family: "Syne", sans-serif;
   font-size: 38px;
   font-weight: 800;
+  text-transform: uppercase;
 }
 
 /* About us */
 #aboutUs {
   margin-bottom: 82px;
+  padding-bottom: 49px;
 }
 
 /* Products */
-#productsHome {
+/* #productsHome {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -193,6 +197,11 @@ li {
   border-bottom-left-radius: 50% 9.5%;
   border-bottom-right-radius: 50% 9.5%;
   overflow: hidden;
+} */
+
+#productsHome {
+  background-color: var(--main-bg-color);
+  padding-bottom: 49px;
 }
 
 #productsHomeTitle {
@@ -209,44 +218,41 @@ li {
   background-color: var(--main-bg-color);
 }
 
-#productsHomeContainer {
-  /* max-width: 816px; */
+/* #productsHomeContainer {
+  max-width: 816px;
   width: 887.19px;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* margin: 0 auto; */
+  margin: 0 auto;
 }
 
 #productsHomeWrapper {
   width: 887.19px;
   background-color: var(--main-bg-color);
+  margin: 0 auto;
+}*/
+
+#productsWrapper {
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
-#productsHomeColumnLeft {
-  margin-right: 17.5px;
-  padding-top: 0;
+.productsImagesColumns {
+  width: 393px;
+  height: 262px;
 }
 
-#productsHomeColumnRight {
-  margin-left: 17.5px;
-}
-
-#productsHomeStrawberry {
-  margin-bottom: 40px;
-}
-
-#productsHomeGrapeFruit {
-  margin-bottom: 40px;
-}
-
-#productsHomeRaspberry .productsHomeImageTitle {
-  margin: 0 50px;
+.productsImages {
+  width: 100%;
+  background-size: cover;
 }
 
 #productsHomeButton {
   margin-top: 47px;
-  margin-bottom: 49px;
+  /* margin-bottom: 49px; */
   background-color: var(--bg-color);
   color: var(--primary-color);
 }
@@ -280,7 +286,7 @@ li {
   background-color: var(--main-bg-color);
 }
 
-/* Meet us */
+/**** 04_MEET_US ****/
 #meetUs {
   height: 100%;
   width: 100%;
@@ -342,7 +348,7 @@ li {
   background-color: var(--main-bg-color);
 }
 
-/* Order */
+/**** 05_ORDER ****/
 #shop,
 #shopImage {
   background-color: var(--secondary-color);
@@ -496,58 +502,49 @@ li {
   background-color: var(--button-bg-color);
 }
 
+/**** 06_LARGE_SCREEN_RESPONSIVE ****/
 @media (max-width: 1024px) {
-  #banner {
-    border-bottom-left-radius: 50% 5.5%;
-    border-bottom-right-radius: 50% 5.5%;
-  }
-
   #aboutUsTitle {
     margin-top: 4em;
     margin-bottom: 2em;
   }
 
-  #productsHome {
-    border-bottom-left-radius: 50% 5.5%;
-    border-bottom-right-radius: 50% 5.5%;
-  }
-
-  #productsHomeTitle {
-    max-width: 326px;
-  }
-
-  #productsHomeContainer {
+  /* .sectionIntern {
     display: flex;
-    width: 326.59px;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
-    overflow: hidden;
+    margin: 0 auto;
+  } */
+
+  /* #productsHomeTitle {
+    max-width: 326px;
+  } */
+
+  /* .productsImagesColumns {
+    width: 80%;
   }
 
-  #productsHomeWrapper {
+  .productsImages {
+    width: 50%;
+  }
+
+  .productsImages h3 {
+    font-size: 48px;
+  } */
+
+  /* #productsHomeWrapper {
     width: 326.59px;
     background-color: var(--main-bg-color);
     overflow: hidden;
   }
 
-  #productsHomeColumnLeft {
-    width: 100%;
-    padding-top: 0;
-    margin-right: 5px;
-  }
-
-  #productsHomeColumnRight {
-    width: 100%;
-    margin-left: 0px;
-    margin-top: 17.5px;
-  }
-
   #productsHomeImageTitle {
     font-size: 38px;
     text-align: center;
-  }
+  } */
 }
 
+/**** 07_MEDIUM_SCREEN_RESPONSIVE ****/
 @media (max-width: 824px) {
   .custom-logo-link {
     width: 90%;
@@ -589,52 +586,24 @@ li {
   #home-title {
     font-size: 1.75rem;
   }
-
-  #productsHome {
-    border-bottom-left-radius: 50% 3.5%;
-    border-bottom-right-radius: 50% 3.5%;
-  }
-}
-
-@media (max-width: 784px) {
-  /* #productsHomeContainer {
-    width: 393px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  #productsHomeColumnLeft {
-    width: 100%;
-    margin: 0 0 35px 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  #productsHomeColumnRight {
-    margin-left: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  } */
 }
 
 @media (max-width: 767px) {
-  /* #banner {
-    80%
-  } */
+  .product .testimonyText p {
+    max-width: 210.65px;
+    margin: 0 auto;
+  }
+}
+
+/* @media (max-width: 767px) {
+  
   .testimonyText p {
     max-width: 210.65px;
     margin: 0 auto;
   }
+} */
 
-  #home-title {
-    font-size: 25px;
-  }
-}
-
+/**** 08_SMALL_SCREEN_RESPONSIVE ****/
 @media (max-width: 393px) {
   .header-container {
     display: flex;
@@ -682,9 +651,9 @@ li {
     font-size: 10px;
   }
 
-  #productsHomeText {
+  /* #productsHomeText {
     display: flex;
     flex: row wrap;
     overflow: hidden;
-  }
+  } */
 }
