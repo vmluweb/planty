@@ -219,21 +219,6 @@ li {
   padding-bottom: 49px;
 }
 
-/* #productsHomeContainer {
-  max-width: 816px;
-  width: 887.19px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-}
-
-#productsHomeWrapper {
-  width: 887.19px;
-  background-color: var(--main-bg-color);
-  margin: 0 auto;
-}*/
-
 #productsWrapper {
   height: auto;
   width: 100%;
@@ -241,14 +226,88 @@ li {
   justify-content: center;
 }
 
-.productsImagesColumns {
+/* .productsImagesColumns {
+  max-width: 393px;
+  height: 262px;
+} */
+
+/* .sectionInternColumns {
+  width: 393px;
+} */
+/* .wpr-cv-container
+  .wpr-grid-item
+  .wpr-grid-item-inner
+  .elementor-widget-container
+  .wpr-media-grid
+  .wpr-grid-image-wrap
+  > img {
   width: 393px;
   height: 262px;
+} */
+/* .images {
+  width: 393px;
+  background-size: cover;
+} */
+#fraise figcaption,
+#citron figcaption {
+  position: relative;
+  top: -162px;
+  overflow: hidden;
 }
 
-.productsImages {
-  width: 100%;
-  background-size: cover;
+#fraise,
+#pamplemousse,
+#framboise,
+#citron {
+  width: 393px;
+  overflow: hidden;
+}
+
+#pamplemousse figcaption,
+#framboise figcaption {
+  position: relative;
+  top: -185px;
+  overflow: hidden;
+}
+
+#frais,
+#cit,
+#framb {
+  height: 262px;
+  overflow: hidden;
+}
+
+#frais figcaption,
+#cit figcaption {
+  position: relative;
+  top: -162px;
+}
+
+#pamp {
+  height: 263px;
+  overflow: hidden;
+}
+
+#pamp figcaption,
+#framb figcaption {
+  position: relative;
+  top: -185px;
+  overflow: hidden;
+}
+
+/* .widget-image-caption {
+  position: relative;
+  top: -162px;
+} */
+
+/* #pamplemousse > img {
+  width: 394px;
+  height: 263px;
+} */
+
+#pamplemousse > figcaption {
+  position: relative;
+  top: -165px;
 }
 
 #productsSection {
