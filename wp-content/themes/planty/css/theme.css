@@ -40,6 +40,7 @@ body {
   display: flex;
   justify-content: center;
   margin: 0;
+  overflow-x: hidden;
 }
 
 .container {
@@ -169,13 +170,16 @@ li {
 /**** 03_HOME ****/
 /* Banner */
 #banner {
-  position: relative;
   background-color: var(--main-bg-color);
-  /* border-bottom: 10px solid var(--shadow-color); */
   overflow: hidden;
 }
 
+#bannerImage {
+  margin: 0 auto;
+}
+
 #home-title {
+  margin: 0 auto;
   font-family: "Syne", sans-serif;
   font-size: 38px;
   font-weight: 800;
@@ -184,10 +188,20 @@ li {
 
 /* About us */
 #aboutUs {
+  width: 100%;
   margin-bottom: 82px;
   padding-bottom: 49px;
+  text-align: center;
 }
 
+#aboutUsWrapper {
+  overflow: hidden;
+}
+
+#gallery {
+  column-gap: 30px;
+  margin: 0 auto;
+}
 /* Products */
 /* #productsHome {
   width: 100%;
@@ -248,67 +262,6 @@ li {
   width: 393px;
   background-size: cover;
 } */
-#fraise figcaption,
-#citron figcaption {
-  position: relative;
-  top: -162px;
-  overflow: hidden;
-}
-
-#fraise,
-#pamplemousse,
-#framboise,
-#citron {
-  width: 393px;
-  overflow: hidden;
-}
-
-#pamplemousse figcaption,
-#framboise figcaption {
-  position: relative;
-  top: -185px;
-  overflow: hidden;
-}
-
-#frais,
-#cit,
-#framb {
-  height: 262px;
-  overflow: hidden;
-}
-
-#frais figcaption,
-#cit figcaption {
-  position: relative;
-  top: -162px;
-}
-
-#pamp {
-  height: 263px;
-  overflow: hidden;
-}
-
-#pamp figcaption,
-#framb figcaption {
-  position: relative;
-  top: -185px;
-  overflow: hidden;
-}
-
-/* .widget-image-caption {
-  position: relative;
-  top: -162px;
-} */
-
-/* #pamplemousse > img {
-  width: 394px;
-  height: 263px;
-} */
-
-#pamplemousse > figcaption {
-  position: relative;
-  top: -165px;
-}
 
 #productsSection {
   background-color: var(--main-bg-color);
@@ -682,17 +635,53 @@ li {
     width: 80%;
     margin: 0 auto;
   }
+
+  #home-title {
+    margin: 0 auto;
+  }
+
+  #aboutUsTitle {
+    margin-top: 4em;
+  }
 }
 
 @media only screen and (min-width: 576px) and (max-width: 767px) {
+  #testimony {
+    width: 100%;
+  }
+
+  #testimonyContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
   .product .testimonyText p {
     max-width: 210.65px;
     margin: 0 auto;
   }
 
   #columnsP {
-    width: 70%;
+    width: 100%;
     margin: 0 auto;
+  }
+
+  #aboutUs {
+    margin: 0 auto;
+  }
+
+  #aboutUsTitle {
+    width: 100%;
+    padding-top: 3em;
+  }
+
+  #sectionIntern {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .im {
+    width: 100%;
   }
 }
 
@@ -701,5 +690,29 @@ li {
   #columnsP {
     width: 100%;
     margin: 0 auto;
+  }
+
+  #aboutUsTitle {
+    margin-top: 4em;
+  }
+
+  #productsHomeText {
+    padding-bottom: 30px;
+  }
+
+  .bannerBottom {
+    /* height: auto; */
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    /* background-size: cover; */
+    object-fit: contain;
+  }
+  .bannerBottomImage {
+    /* height: auto; */
+    width: 100%;
+    /* height: 8rem; */
+    object-fit: contain;
+    margin: 0;
   }
 }
