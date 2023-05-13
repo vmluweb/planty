@@ -176,6 +176,7 @@ li {
 
 #bannerImage {
   margin: 0 auto;
+  overflow: hidden;
 }
 
 #home-title {
@@ -298,13 +299,7 @@ li {
   padding: 0;
 }
 
-.bannerBottomImage {
-  /* height: auto; */
-  width: 100%;
-  overflow: hidden;
-}
-
-#bannerBottom {
+#bannerBottomImage {
   background-color: var(--main-bg-color);
 }
 
@@ -372,7 +367,8 @@ li {
 
 /**** 05_ORDER ****/
 #shop,
-#shopImage {
+#shopImage,
+#shopSubtitle {
   background-color: var(--secondary-color);
   color: var(--primary-color);
 }
@@ -383,78 +379,60 @@ li {
 
 /* FORMULAIRE DE PRECOMMANDE */
 .quantityWrapper {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-}
-
-.quantityColumnsWrapper {
-  width: 192.53px;
-  height: 56px !important;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.quantityColumnLeft {
-  display: flex;
-  /* margin-top: 58px; */
-}
-
-.quantityColumnRight {
-  display: flex;
-  border-radius: 5px;
-  justify-content: center;
-  align-self: center;
-}
-
-.quantitySelected::-webkit-outer-spin-button,
-.quantitySelected::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  border: none;
-}
-
-.quantitySymbols p {
-  width: 25px;
   height: 56px;
-  margin-top: 22px;
-  position: absolute;
+  width: 190px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 4px 5px 5px 4px;
+}
+
+.quantitySelected {
+  width: 82px;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  background-color: var(--primary-color);
+}
+
+.quantityValue {
+  height: 100%;
+  width: 55%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.quantitySymbols {
+  height: 100%;
+  width: 45%;
   display: flex;
   flex-direction: column;
-  text-align: center;
-  align-items: center;
-}
-
-.symbol {
-  display: flex;
   justify-content: center;
-  width: 100%;
-  height: 100%;
   align-items: center;
-  align-self: center;
+  border-radius: 0 4px 4px 0;
+  color: var(--primary-color);
   background-color: var(--bg-color);
-  margin-right: 50px;
 }
 
-.plus {
-  border-radius: 0 4px 0 0;
+#plus {
+  width: 100%;
+  padding-bottom: 5px;
+  text-align: center;
   border-bottom: 1px solid var(--primary-color);
 }
 
-.minus {
-  border-radius: 0 0 4px 0;
+#minus {
+  padding-top: 2px;
 }
 
 .quantityValidatedButton {
-  display: flex;
-  justify-content: flex-end;
+  height: 100%;
+  width: 100px;
+  border-radius: 5px;
   text-transform: uppercase;
   color: var(--primary-color);
   background-color: var(--button-bg-order-color);
-  /* margin-top: 39px; */
-  padding: 21px 35px 21px 35px;
-  border-radius: 5px;
 }
 
 .quantityValidatedButton:hover {
@@ -617,6 +595,12 @@ li {
 }
 
 /**** 09_LARGE_SCREEN_RESPONSIVE ****/
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+  #teamBranchImage {
+    overflow: hidden;
+  }
+}
+
 @media only screen and (min-width: 992px) and (max-width: 1024px) {
   #aboutUsTitle {
     margin-top: 4em;
@@ -626,6 +610,11 @@ li {
   #columnsP {
     width: 90%;
     margin: 0 auto;
+  }
+
+  #teamBranchImage {
+    left: 0;
+    right: 0;
   }
 }
 
