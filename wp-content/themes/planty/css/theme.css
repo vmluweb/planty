@@ -15,7 +15,7 @@
 
 /**** 01_GENERAL_SETTINGS ****/
 @import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 * {
   font-family: "Syne", sans-serif;
 }
@@ -380,7 +380,7 @@ li {
 /* FORMULAIRE DE PRECOMMANDE */
 .quantityWrapper {
   height: 56px;
-  width: 190px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   border-radius: 4px 5px 5px 4px;
@@ -395,17 +395,20 @@ li {
 }
 
 .quantityValue {
-  height: 100%;
-  width: 55%;
+  height: 56px;
+  width: 95%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 10px 10px 15px 10px;
+  color: var(--main-color);
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
 }
 
 .quantitySymbols {
-  height: 100%;
-  width: 45%;
+  height: 56px;
+  width: 60%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -616,6 +619,22 @@ li {
     left: 0;
     right: 0;
   }
+
+  .quantityWrapper {
+    height: 46px;
+  }
+
+  .quantitySelected {
+    width: 72px;
+  }
+
+  .quantitySymbols {
+    height: 46px;
+  }
+
+  .quantityValidatedButton {
+    width: 50px;
+  }
 }
 
 /**** 10_MEDIUM_SCREEN_RESPONSIVE ****/
@@ -631,6 +650,35 @@ li {
 
   #aboutUsTitle {
     margin-top: 4em;
+  }
+
+  #shopImage {
+    padding-bottom: 5px;
+  }
+
+  .quantityWrapper {
+    height: 46px;
+  }
+
+  .quantitySelected {
+    width: 72px;
+  }
+
+  .quantitySymbols {
+    height: 100%;
+  }
+
+  .quantityValidatedButton {
+    width: 50px;
+  }
+
+  .deliveryInfo {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .deliveryInfoTitles {
+    font-size: 20px;
   }
 }
 
@@ -672,6 +720,59 @@ li {
   .im {
     width: 100%;
   }
+
+  #shopImage {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .shopItemImage {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .quantityWrapper {
+    width: 66%;
+    margin: 0 auto;
+  }
+
+  .quantitySelected {
+    width: 150px;
+  }
+
+  .quantitySymbols {
+    width: 25%;
+  }
+
+  .quantityValidatedButton {
+    width: 150px;
+  }
+
+  .deliveryInfoTitles {
+    font-size: 20px;
+  }
+
+  .deliveryInfo {
+    width: 100%;
+    font-display: flex;
+    flex-direction: column;
+  }
+
+  #infoColumnLeft {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #ffffff;
+    padding-right: 0;
+    padding-bottom: 50px;
+  }
+
+  #infoColumnRight {
+    width: 100%;
+    padding-left: 0;
+    padding-top: 50px;
+  }
 }
 
 /**** 11_SMALL_SCREEN_RESPONSIVE ****/
@@ -704,5 +805,62 @@ li {
     /* height: 8rem; */
     object-fit: contain;
     margin: 0;
+  }
+
+  #shopImage {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .shopItemImage {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .quantityWrapper {
+    width: 72%;
+    margin: 0 auto;
+  }
+
+  .quantitySelected {
+    width: 200px;
+  }
+
+  .quantitySymbols {
+    width: 25%;
+  }
+
+  .quantityValidatedButton {
+    width: 160px;
+  }
+
+  .deliveryInfo {
+    font-display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 80%;
+  }
+
+  .deliveryInfoTitles {
+    font-size: 20px;
+  }
+
+  #infoColumnLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #ffffff;
+    padding-right: 0;
+    padding-bottom: 50px;
+  }
+
+  #infoColumnRight {
+    width: 100%;
+    padding-left: 0;
+    padding-top: 50px;
   }
 }
