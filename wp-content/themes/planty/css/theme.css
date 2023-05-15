@@ -16,9 +16,6 @@
 /**** 01_GENERAL_SETTINGS ****/
 @import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
-* {
-  font-family: "Syne", sans-serif;
-}
 
 html {
   height: 100%;
@@ -41,6 +38,7 @@ body {
   justify-content: center;
   margin: 0;
   overflow-x: hidden;
+  font-family: "Syne", sans-serif;
 }
 
 .container {
@@ -121,7 +119,6 @@ li {
   color: var(--main-color);
   padding: 0 60px;
   align-items: center;
-  font-family: "Syne", sans-serif;
   font-size: 16px;
   font-weight: 400;
   transition: all ease-in-out 0.1s;
@@ -169,29 +166,28 @@ li {
 
 /**** 03_HOME ****/
 /* Banner */
-#banner {
+.banner {
   background-color: var(--main-bg-color);
   overflow: hidden;
 }
 
-#bannerImage {
+.bannerTitle {
   margin: 0 auto;
-  overflow: hidden;
-}
-
-#home-title {
-  margin: 0 auto;
-  font-family: "Syne", sans-serif;
   font-size: 38px;
   font-weight: 800;
   text-transform: uppercase;
+}
+
+.bannerImage {
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 /* About us */
 #aboutUs {
   width: 100%;
   margin-bottom: 82px;
-  padding-bottom: 49px;
+  padding-bottom: 0px;
   text-align: center;
 }
 
@@ -199,10 +195,11 @@ li {
   overflow: hidden;
 }
 
-#gallery {
+.gallery {
   column-gap: 30px;
   margin: 0 auto;
 }
+
 /* Products */
 /* #productsHome {
   width: 100%;
@@ -231,7 +228,7 @@ li {
   flex: row wrap;
   justify-content: center;
   padding-top: 7px;
-  padding-bottom: 49px;
+  padding-bottom: 1.5em;
 }
 
 #productsWrapper {
@@ -240,29 +237,6 @@ li {
   display: flex;
   justify-content: center;
 }
-
-/* .productsImagesColumns {
-  max-width: 393px;
-  height: 262px;
-} */
-
-/* .sectionInternColumns {
-  width: 393px;
-} */
-/* .wpr-cv-container
-  .wpr-grid-item
-  .wpr-grid-item-inner
-  .elementor-widget-container
-  .wpr-media-grid
-  .wpr-grid-image-wrap
-  > img {
-  width: 393px;
-  height: 262px;
-} */
-/* .images {
-  width: 393px;
-  background-size: cover;
-} */
 
 #productsSection {
   background-color: var(--main-bg-color);
@@ -274,9 +248,7 @@ li {
 }
 
 #productsHomeButton {
-  margin-top: 47px;
-  /* margin-bottom: 49px; */
-  background-color: var(--bg-color);
+  background-color: var(--button-bg-order-color);
   color: var(--primary-color);
 }
 
@@ -288,6 +260,14 @@ li {
 /* Testimony */
 #testimonyTitle {
   color: var(--secondary-color);
+}
+
+.testimonyWrapper {
+  margin: 0 auto;
+}
+
+.testimonyItem {
+  align-items: center;
 }
 
 .testimonySubTitle {
@@ -304,6 +284,10 @@ li {
 }
 
 /**** 04_MEET_US ****/
+#arbusteSection {
+  background-color: var(--main-bg-color);
+}
+
 #meetUs {
   height: 100%;
   width: 100%;
@@ -447,7 +431,6 @@ li {
   width: 100%;
   display: flex;
   margin-top: 40px;
-  font-family: "Syne", sans-serif;
   color: var(--primary-color);
   justify-content: space-between;
   border-top: 1px solid var(--primary-color);
@@ -460,10 +443,17 @@ li {
   margin-bottom: 39px;
 }
 
-.inputShop {
+#shopName,
+#shopFirstname,
+#shopEmail,
+#shopAddress,
+#shopPostCode,
+#shopCity {
   width: 100%;
   font-size: 20px;
   font-weight: 400;
+  color: var(--main-color);
+  padding-left: 10px;
 }
 
 .labelOrderForm {
@@ -471,7 +461,6 @@ li {
   justify-content: start;
   padding-top: 20px;
   /* padding-left: 20px; */
-  font-family: "Syne", sans-serif;
   font-size: 20px;
   font-weight: 400;
   overflow: hidden;
@@ -544,7 +533,7 @@ li {
     font-size: 12px;
   }
 
-  #home-title {
+  .bannerTitle {
     font-size: 1.75rem;
   }
 }
@@ -598,10 +587,16 @@ li {
 }
 
 /**** 09_LARGE_SCREEN_RESPONSIVE ****/
+@media only screen and (min-width: 1201px) and (max-width: 1440px) {
+}
+
+@media only screen and (min-width: 1026px) and (max-width: 1200px) {
+}
+
 @media only screen and (min-width: 1025px) and (max-width: 1200px) {
-  #teamBranchImage {
-    overflow: hidden;
-  }
+  /* #teamBranchImage {
+    right:
+  } */
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1024px) {
@@ -644,7 +639,7 @@ li {
     margin: 0 auto;
   }
 
-  #home-title {
+  .bannerTitle {
     margin: 0 auto;
   }
 
@@ -791,18 +786,14 @@ li {
   }
 
   .bannerBottom {
-    /* height: auto; */
     width: 100%;
     padding: 0;
     margin: 0;
-    /* background-size: cover; */
     object-fit: contain;
   }
 
   .bannerBottomImage {
-    /* height: auto; */
     width: 100%;
-    /* height: 8rem; */
     object-fit: contain;
     margin: 0;
   }
