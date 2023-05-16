@@ -125,12 +125,13 @@ li {
   align-items: center;
   font-size: 16px;
   font-weight: 400;
-  transition: all ease-in-out 0.1s;
+  /* transition: all ease-in-out 0.1s; */
 }
 
 .menu-item a span:hover {
   font-weight: 700;
-  font-size: 13px;
+  top: 1px;
+  left: 12px;
 }
 
 #menu-item-43 {
@@ -587,7 +588,7 @@ li {
     display: flex;
     padding: 0;
     margin: 0;
-    font-size: 20px;
+    font-size: 16px;
     color: var(--main-color);
   }
 
