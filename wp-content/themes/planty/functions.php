@@ -9,6 +9,12 @@ function theme_enqueue_styles()
     wp_enqueue_style('theme-style', get_stylesheet_directory_uri() . '/css/theme.css', array(), filemtime(get_stylesheet_directory() . '/css/theme.css'));
 }
 
+function burger_menu_scripts()
+{
+    wp_enqueue_script('burger-menu-script', get_stylesheet_directory_uri() . '/js/burgerMenu.js', array('jquery'));
+}
+add_action('wp_enqueue_scripts', 'burger_menu_scripts');
+
 /* HOOKS ACTION */
 function planty_supports()
 {
