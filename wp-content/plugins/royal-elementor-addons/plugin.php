@@ -10,6 +10,7 @@ use WprAddons\Includes\Controls\WPR_Control_Button_Animations;
 use WprAddons\Includes\Controls\WPR_Control_Arrow_Icons;
 use WprAddons\Classes\Utilities;
 use Elementor\Core\App\App;
+use WP_REST_Response;
 
 if ( ! defined( 'ABSPATH' ) ) {	exit; } // Exit if accessed directly
 
@@ -90,12 +91,16 @@ class Plugin {
 		require WPR_ADDONS_PATH . 'admin/includes/wpr-templates-library.php';
 
 		// Post Likes
-		require WPR_ADDONS_PATH . 'classes/wpr-post-likes.php';
+		require WPR_ADDONS_PATH . 'classes/modules/wpr-post-likes.php';
 
 		// Ajax Search
-		require WPR_ADDONS_PATH . 'classes/wpr-ajax-search.php';
-		require WPR_ADDONS_PATH . 'classes/wpr-load-more-instagram-posts.php';
-		require WPR_ADDONS_PATH . 'classes/wpr-load-more-tweets.php';
+		require WPR_ADDONS_PATH . 'classes/modules/wpr-ajax-search.php';
+
+		// Instagram
+		require WPR_ADDONS_PATH . 'classes/modules/wpr-load-more-instagram-posts.php';
+
+		// Twitter
+		require WPR_ADDONS_PATH . 'classes/modules/wpr-load-more-tweets.php';
 
 		// Particles
 		if ( 'on' === get_option('wpr-particles', 'on') ) {//TODO: make this check automatic(loop through) for all extensions
@@ -120,16 +125,24 @@ class Plugin {
 		// Mega Menu
 		require WPR_ADDONS_PATH . 'admin/mega-menu.php';
 
+
+		// Form Builder
+		// TODO:: ommit if form builder turned off if possible
+		require WPR_ADDONS_PATH . 'classes/modules/wpr-form-handlers.php';
+
 		// Admin Files
 		if ( is_admin() ) {
-			// Plugin Updaate Notice
-			require WPR_ADDONS_PATH . 'classes/plugin-update-notice.php';
+			// Pro Features Notice
+			require WPR_ADDONS_PATH . 'admin/notices/pro-features-notice.php';
+
+			// Plugin Update Notice
+			require WPR_ADDONS_PATH . 'admin/notices/plugin-update-notice.php';
 			
 			// Plugin Sale Notice
-			require WPR_ADDONS_PATH . 'classes/plugin-sale-notice.php';
+			require WPR_ADDONS_PATH . 'admin/notices/plugin-sale-notice.php';
 			
 			// Rating Notice 
-			require WPR_ADDONS_PATH . 'classes/rating-notice.php';
+			require WPR_ADDONS_PATH . 'admin/notices/rating-notice.php';
 
 			// Plugin Options
 			require WPR_ADDONS_PATH . 'admin/plugin-options.php';
@@ -146,6 +159,9 @@ class Plugin {
 			// Theme Builder
 			require WPR_ADDONS_PATH . 'admin/popups.php';
 
+			// Secondary Image
+			require WPR_ADDONS_PATH . 'admin/metabox/wpr-secondary-image.php';
+
 			// Hide Theme Notice
 			// TODO: Remove this and fix with Transients
 			add_action( 'admin_enqueue_scripts', [ $this, 'hide_theme_notice' ] );
@@ -153,6 +169,21 @@ class Plugin {
 
 		if ( class_exists('WooCommerce') && 'on' === get_option('wpr_override_woo_templates', 'on') ) {
 			require WPR_ADDONS_PATH . 'includes/woocommerce/woocommerce-config.php';
+
+			// Add Remove From Wishlist
+			require WPR_ADDONS_PATH . 'classes/woocommerce/wpr-add-remove-from-wishlist.php';
+
+			// Add Remove From Compare
+			require WPR_ADDONS_PATH . 'classes/woocommerce/wpr-add-remove-from-compare.php';
+
+			// Update Mini Wishlist
+			require WPR_ADDONS_PATH . 'classes/woocommerce/wpr-update-mini-wishlist.php';
+
+			// Compare Popup Action
+			require WPR_ADDONS_PATH . 'classes/woocommerce/wpr-compare-popup-action.php';
+
+			// Add Remove From Compare
+			require WPR_ADDONS_PATH . 'classes/woocommerce/wpr-update-mini-compare.php';
 		}
 	}
 
@@ -227,6 +258,54 @@ class Plugin {
 		} );
 	}
 
+    public function wpr_get_page_content($request) {
+        // $page_id = $_POST['wpr_compare_page_id'];  
+        $page_id = $request->get_param('id');
+        
+        // Check if the page was created with Elementor
+        if (\Elementor\Plugin::$instance->db->is_built_with_elementor($page_id)) {
+            // $content = \Elementor\Plugin::$instance->frontend->get_builder_content($page_id);
+            // return new WP_REST_Response(array('content' => $content), 200);
+			
+            $post_id = $request->get_param( 'id' );
+            $post = get_post( $post_id );
+
+            if ( ! $post ) {
+                return new WP_Error( 'invalid_post_id', __( 'Invalid post ID' ), array( 'status' => 404 ) );
+            }
+
+            $response = new WP_REST_Response( $post->post_content, 200 );
+
+            if ( class_exists( '\Elementor\Plugin' ) ) {
+                $elementor = \Elementor\Plugin::$instance->frontend->get_builder_content( $post_id, true );
+                if ( ! empty( $elementor ) ) {
+                    $response->set_data( $elementor );
+                }
+            }
+
+            return $response;
+        } else {
+            $page = get_post($page_id);  
+            if ($page) {
+                $content = apply_filters('the_content', $page->post_content);
+                return new WP_REST_Response(array('content' => $content), 200);
+            } else {
+                return new WP_Error('page_not_found', 'Page not found', array('status' => 404));
+            }
+        }
+        wp_die();
+    }
+
+    public function register_compare_custom_routes() {
+		add_action( 'rest_api_init', function() {
+			register_rest_route('wpraddons/v1', '/page-content/(?P<id>\d+)', array(
+				'methods' => 'GET',
+				'callback' => [$this, 'wpr_get_page_content'],
+				'permission_callback' => '__return_true'
+			));
+		});
+    }
+
 	public function register_custom_controls() {
 
 		$controls_manager = \Elementor\Plugin::$instance->controls_manager;
@@ -284,7 +363,7 @@ class Plugin {
 			Plugin::instance()->get_version()
 		);
 
-		// GOGA - development had enqueue instead of register (reason found)
+		// GOGA - enqueue instead of register (because of animations)
 		wp_enqueue_style(
 			'wpr-text-animations-css',
 			WPR_ADDONS_URL . 'assets/css/lib/animations/text-animations'. $this->script_suffix() .'.css',
@@ -401,6 +480,7 @@ class Plugin {
 			WPR_ADDONS_URL . 'assets/js/frontend'. $this->script_suffix() .'.js',
 			[
 				'jquery',
+				'elementor-frontend'
 			],
 			Plugin::instance()->get_version(),
 			true
@@ -422,7 +502,18 @@ class Plugin {
 			[
 				'ajaxurl' => admin_url( 'admin-ajax.php' ),
 				'resturl' => get_rest_url() . 'wpraddons/v1',
-				'nonce' => wp_create_nonce( 'wpr-addons-js' )
+				'nonce' => wp_create_nonce( 'wpr-addons-js' ),
+				'comparePageID' => get_option('wpr_compare_page'),
+				'comparePageURL' => get_permalink(get_option('wpr_compare_page')),
+				'wishlistPageID' => get_option('wpr_wishlist_page'),
+				'wishlistPageURL' => get_permalink(get_option('wpr_wishlist_page')),
+				'chooseQuantityText' => esc_html__('Please select the required number of items.'),
+				'site_key' => get_option('wpr_recaptcha_v3_site_key'),
+				'is_admin' => current_user_can('manage_options'),
+				'input_empty' => esc_html__('Please fill out this field'),
+				'select_empty' => esc_html__('Nothing selected'),
+				'file_empty' => esc_html__('Please upload a file'),
+				'recaptcha_error' => esc_html__('Recaptcha Error')
 			]
 		);
 	}
@@ -556,7 +647,7 @@ class Plugin {
 		wp_enqueue_script(
 			'wpr-addons-editor-js',
 			WPR_ADDONS_URL . 'assets/js/editor'. $this->script_suffix() .'.js',
-			[ 'jquery' ],
+			[ 'jquery', 'wp-i18n' ],
 			Plugin::instance()->get_version(),
 			true
 		);
@@ -763,9 +854,10 @@ class Plugin {
 	}
 
     public function promote_premium_widgets($config) {
+		$config['promotionWidgets'] = [];
+		$category = Utilities::is_theme_builder_template() ? 'wpr-woocommerce-builder-widgets' : 'wpr-premium-widgets';
+
 		if ( ! wpr_fs()->can_use_premium_code() ) {
-			$category = Utilities::is_theme_builder_template() ? 'wpr-woocommerce-builder-widgets' : 'wpr-premium-widgets';
-			
 			$config['promotionWidgets'] = [
 				[
 					'name' => 'wpr-woo-category-grid',
@@ -791,13 +883,69 @@ class Plugin {
 					'icon' => 'wpr-icon eicon-product-breadcrumbs',
 					'categories' => '["'. $category .'"]',
 				],
+				[
+					'name' => 'wpr-breadcrumbs',
+					'title' => __('Post Breadcrumbs', 'wpr-addons'),
+					'icon' => 'wpr-icon eicon-product-breadcrumbs',
+					'categories' => '["'. $category .'"]',
+				],
 			];
+		}
+		
+		if ( !wpr_fs()->is_plan( 'expert' ) ) {
+			$expert_widgets = [
+				[
+					'name' => 'wpr-wishlist-button',
+					'title' => __('Wishlist Button', 'wpr-addons'),
+					'icon' => 'wpr-icon eicon-heart',
+					'categories' => '["'. $category .'"]',
+				],
+				[
+					'name' => 'wpr-mini-wishlist',
+					'title' => __('Mini Wishlist', 'wpr-addons'),
+					'icon' => 'wpr-icon eicon-heart',
+					'categories' => '["'. $category .'"]',
+				],
+				[
+					'name' => 'wpr-wishlist',
+					'title' => __('Wishlist Table', 'wpr-addons'),
+					'icon' => 'wpr-icon eicon-heart',
+					'categories' => '["'. $category .'"]',
+				],
+				[
+					'name' => 'wpr-compare-button',
+					'title' => __('Compare Button', 'wpr-addons'),
+					'icon' => 'wpr-icon eicon-exchange', // GOGA - new icon needed for compare
+					'categories' => '["'. $category .'"]',
+				],
+				[
+					'name' => 'wpr-mini-compare',
+					'title' => __('Mini Compare', 'wpr-addons'),
+					'icon' => 'wpr-icon eicon-exchange',
+					'categories' => '["'. $category .'"]',
+				],
+				[
+					'name' => 'wpr-compare',
+					'title' => __('Compare Table', 'wpr-addons'),
+					'icon' => 'wpr-icon eicon-exchange',
+					'categories' => '["'. $category .'"]',
+				],
+			];
+
+			$config['promotionWidgets'] = array_merge( $config['promotionWidgets'], $expert_widgets );
 		}
 
         return $config;
     }
+	
+	public function wpr_enqueue_recaptcha_script() {
+		$site_key = get_option('wpr_recaptcha_v3_site_key');
+		wp_enqueue_script('google-recaptcha', 'https://www.google.com/recaptcha/api.js?render=' . $site_key, array(), null, true);
+	}
 
 	protected function add_actions() {
+		add_action('wp_enqueue_scripts', [$this, 'wpr_enqueue_recaptcha_script']);
+
 		// Register Widgets
 		add_action( 'elementor/init', [ $this, 'elementor_init' ] );
 
@@ -809,6 +957,8 @@ class Plugin {
 
 		// Register Mega Menu Route
 		$this->register_megamenu_route();
+
+		$this->register_compare_custom_routes();
 
 		// Register Custom Controls
 		add_action( 'elementor/controls/controls_registered', [ $this, 'register_custom_controls' ] );

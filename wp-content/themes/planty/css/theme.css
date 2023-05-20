@@ -267,16 +267,73 @@ li {
   color: var(--secondary-color);
 }
 
+/* #testimonyTwo div p {
+  width: 100%;
+} */
+
+#testimonyTwoColumnTwo {
+  width: 30%;
+}
+#testimonyTwoColumnTwo:first-child {
+  width: 150px;
+}
+
+#testimonyTwoColumnTwo p {
+  width: 100%;
+}
+
 .testimonyWrapper {
   margin: 0 auto;
+}
+
+/* .testimonyC > .elementor-widget-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.wpr-testimonial-job {
+  display: flex;
+  flex-wrap: wrap;
+} */
+/* .testimonyColumn > .elementor-column,
+.testimonyColumn > .wpr-testimonial-content-wrap,
+.testimonyColumn > .elementor-widget-wrap,
+.testimonyColumn > .elementor-element {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .testimonyItem {
   align-items: center;
 }
 
+.wpr-testimonial-content-wrap {
+  width: 100%;
+}
+.wpr-testimonial-content-inner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.wpr-testimonial-title {
+  width: 100%;
+  color: var(--secondary-color);
+  margin: 0;
+  text-align: left;
+  margin-left: 0;
+  display: flex;
+  justify-content: flex-start;
+} */
 .testimonySubTitle {
   color: var(--secondary-color);
+}
+
+.wpr-testimonial-item {
+  align-items: center;
 }
 
 .bannerBottom {
@@ -325,9 +382,9 @@ li {
   background-color: var(--main-bg-color);
 }
 
-#contactMainColumnForm {
+/* #contactMainColumnForm {
   max-width: 393px;
-}
+} */
 
 .labelForm {
   display: flex;
@@ -341,7 +398,7 @@ li {
 }
 
 #form-submit {
-  padding: 20px 70px;
+  /* padding: 20px 70px; */
   color: var(--primary-color);
   background-color: var(--bg-color);
 }
@@ -562,6 +619,51 @@ li {
     width: 100%;
   }
 
+  .burgerMenu {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 99;
+  }
+
+  .toggleMenu {
+    display: inline-flex;
+    float: left;
+    margin: 25px;
+    font-size: 2em;
+    color: var(--bg-color);
+  }
+
+  #menu {
+    position: relative;
+    background-color: var(--primary-color);
+    text-align: center;
+  }
+
+  #menu ul {
+    display: none;
+    position: absolute;
+    /* overflow: auto; */
+    top: 80px;
+    right: 0;
+    z-index: 999;
+  }
+
+  #menu ul li {
+    float: none;
+    display: block;
+    position: relative;
+    top: 0;
+    right: 0;
+    min-width: 200px;
+    background-color: var(--primary-color);
+    text-align: center;
+  }
+
+  #menu li:after {
+    content: none;
+  }
+
   #menu {
     width: 100%;
     display: flex;
@@ -615,13 +717,19 @@ li {
 @media only screen and (min-width: 1201px) and (max-width: 1440px) {
 }
 
-@media only screen and (min-width: 1026px) and (max-width: 1200px) {
+@media only screen and (min-width: 1201px) and (max-width: 1440px) {
+  .testimonyWrapper {
+    margin: 0 auto;
+  }
 }
 
 @media only screen and (min-width: 1025px) and (max-width: 1200px) {
   /* #teamBranchImage {
     right:
   } */
+  .testimonyWrapper {
+    margin: 0 auto;
+  }
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1024px) {
@@ -797,51 +905,6 @@ li {
 
 /**** 11_SMALL_SCREEN_RESPONSIVE ****/
 @media only screen and (min-width: 320px) and (max-width: 575px) {
-  .burgerMenu {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    z-index: 99;
-  }
-
-  .toggleMenu {
-    display: inline-flex;
-    float: left;
-    margin: 25px;
-    font-size: 2em;
-    color: var(--bg-color);
-  }
-
-  #menu {
-    position: relative;
-    background-color: var(--primary-color);
-    text-align: center;
-  }
-
-  #menu ul {
-    display: none;
-    position: absolute;
-    /* overflow: auto; */
-    top: 80px;
-    right: 0;
-    z-index: 999;
-  }
-
-  #menu ul li {
-    float: none;
-    display: block;
-    position: relative;
-    top: 0;
-    right: 0;
-    min-width: 200px;
-    background-color: var(--primary-color);
-    text-align: center;
-  }
-
-  #menu li:after {
-    content: none;
-  }
-
   #columnsP {
     width: 100%;
     margin: 0 auto;
@@ -862,11 +925,12 @@ li {
     object-fit: contain;
   }
 
-  .bannerBottomImage {
+  /* .bannerBottomImage {
     width: 100%;
     object-fit: contain;
     margin: 0;
-  }
+    overflow: hidden;
+  } */
 
   #shopImage {
     display: flex;

@@ -17,13 +17,8 @@
                     the_custom_logo(); ?>
                 <?php endif ?>
             </div>
-            <!-- <input type="checkbox" id="navbarToggle">
-            <label for="navbarToggle" id="navbarToggleLabel"><i class="fa-solid fa-bars"></i></label> -->
-            <!-- <label for="navbarToggle" id="navbarToggleLabel">
-                <img src="./image/menu.png" alt="menuBurger" class="menuBurger">
-            </label> -->
-
             <nav id="menu" role="navigation">
+                <!-- small screens menu -->
                 <div class="burgerMenu">
                     <a href="#" class="toggleMenu">&#9776;</a>
                 </div>

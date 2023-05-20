@@ -395,6 +395,19 @@
     width: 120px;
 }
 
+.wpr-tplib-search + .wpr-tplib-filters-wrap .wpr-tplib-filters-list {
+    right: 0;
+    width: 100%;
+}
+
+.wpr-tplib-search + .wpr-tplib-filters-wrap .wpr-tplib-filters-list ul {
+    flex-direction: column
+}
+
+.wpr-tplib-search + .wpr-tplib-filters-wrap .wpr-tplib-filters-list ul li {
+    width: 100%;
+}
+
 .wpr-tplib-price-list {
     width: 120px;
     padding: 10px;
@@ -456,6 +469,10 @@
 .wpr-tplib-pro-wrap:not(.wpr-tplib-pro-active):before {
     content: 'Pro';
     background: #6A4BFF;
+}
+
+.wpr-tplib-sidebar[data-license="premium"] + .wpr-tplib-template-gird .wpr-tplib-template-wrap:before {
+    display: none !important;
 }
 
 @media screen and ( max-width: 1364px ) {

@@ -1,7 +1,7 @@
 <?php
-namespace WprAddons\Admin\Templates;
+namespace WprAddons\Admin\Templates\Library;
 use WprAddons\Classes\Utilities;
-use WprAddons\Admin\Templates\WPR_Templates_Data;
+use WprAddons\Admin\Templates\Library\WPR_Templates_Data;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -28,10 +28,11 @@ class WPR_Templates_Library_Blocks {
 	** Template Library Popup
 	*/
 	public static function render_library_templates_blocks() {
+		$license = !wpr_fs()->can_use_premium_code() ? 'free' : 'premium';
 
 		?>
 
-		<div class="wpr-tplib-sidebar">
+		<div class="wpr-tplib-sidebar" data-license="<?php echo esc_attr($license); ?>">
 			<div class="wpr-tplib-filters-wrap">
 				<div class="wpr-tplib-filters">
 					<h3>

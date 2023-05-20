@@ -304,6 +304,9 @@ class Wpr_Advanced_Slider extends Widget_Base {
 			[
 				'label' => esc_html__( 'Image', 'wpr-addons' ),
 				'type' => Controls_Manager::MEDIA,
+				'dynamic' => [
+					'active' => true,
+				]
 			]
 		);
 
@@ -330,6 +333,9 @@ class Wpr_Advanced_Slider extends Widget_Base {
 			'slider_item_bg_image_url',
 			[
 				'type' => Controls_Manager::URL,
+				'dynamic' => [
+					'active' => true,
+				],
 				'placeholder' => esc_html__( 'https://your-link.com', 'wpr-addons' ),
 				'show_label' => false,
 				'condition' => [
@@ -343,6 +349,9 @@ class Wpr_Advanced_Slider extends Widget_Base {
 			[
 				'label' => esc_html__( 'Video URL', 'wpr-addons' ),
 				'type' => Controls_Manager::TEXT,
+				'dynamic' => [
+					'active' => true,
+				],
 				'placeholder' => esc_html__( 'https://www.your-link.com', 'wpr-addons' ),
 				'condition' => [
 					'slider_item_link_type' => ['video-youtube', 'video-vimeo'],
@@ -514,6 +523,7 @@ class Wpr_Advanced_Slider extends Widget_Base {
 					'h5' => esc_html__( 'H5', 'wpr-addons' ),
 					'h6' => esc_html__( 'H6', 'wpr-addons' )
 				],
+				'default' => 'h2',
 				'condition' => [
 					'slider_show_content' => 'yes',
 				]
@@ -525,6 +535,9 @@ class Wpr_Advanced_Slider extends Widget_Base {
 			[
 				'label'  	=> esc_html__( 'Title', 'wpr-addons' ),
 				'type'   	=> Controls_Manager::TEXT,
+				'dynamic' => [
+					'active' => true,
+				],
 				'default' => 'Slide Title',
 				'condition' => [
 					'slider_show_content' => 'yes',
@@ -545,6 +558,7 @@ class Wpr_Advanced_Slider extends Widget_Base {
 					'h5' => esc_html__( 'H5', 'wpr-addons' ),
 					'h6' => esc_html__( 'H6', 'wpr-addons' )
 				],
+				'default' => 'h3',
 				'condition' => [
 					'slider_show_content' => 'yes',
 				]
@@ -556,6 +570,9 @@ class Wpr_Advanced_Slider extends Widget_Base {
 			[
 				'label'  	=> esc_html__( 'Sub Title', 'wpr-addons' ),
 				'type'   	=> Controls_Manager::TEXT,
+				'dynamic' => [
+					'active' => true,
+				],
 				'default' => 'Slide Sub Title',
 				'condition' => [
 					'slider_show_content' => 'yes',
@@ -568,6 +585,9 @@ class Wpr_Advanced_Slider extends Widget_Base {
 			[
 				'label'   	=> esc_html__( 'Description', 'wpr-addons' ),
 				'type'    	=> Controls_Manager::TEXTAREA,
+				'dynamic' => [
+					'active' => true,
+				],
 				'default' => 'Slider Description Text, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur laoreet cursus volutpat. Aliquam sit amet ligula et justo tincidunt laoreet non vitae lorem. ',
 				'condition' => [
 					'slider_show_content' => 'yes',
@@ -616,6 +636,9 @@ class Wpr_Advanced_Slider extends Widget_Base {
 			[
 				'label' => esc_html__( 'Text', 'wpr-addons' ),
 				'type' => Controls_Manager::TEXT,
+				'dynamic' => [
+					'active' => true,
+				],
 				'default' => 'Button 1',
 				'condition' => [
 					'slider_item_btn_1' => 'yes',
@@ -643,6 +666,9 @@ class Wpr_Advanced_Slider extends Widget_Base {
 			[
 				'label' => esc_html__( 'Link', 'wpr-addons' ),
 				'type' => Controls_Manager::URL,
+				'dynamic' => [
+					'active' => true,
+				],
 				'label_block' => false,
 				'placeholder' => esc_html__( 'https://www.your-link.com', 'wpr-addons' ),
 				'condition' => [
@@ -693,6 +719,9 @@ class Wpr_Advanced_Slider extends Widget_Base {
 			[
 				'label' => esc_html__( 'Text', 'wpr-addons' ),
 				'type' => Controls_Manager::TEXT,
+				'dynamic' => [
+					'active' => true,
+				],
 				'default' => 'Button 2',
 				'condition' => [
 					'slider_item_btn_2' => 'yes',
@@ -720,6 +749,9 @@ class Wpr_Advanced_Slider extends Widget_Base {
 			[
 				'label' => esc_html__( 'Link', 'wpr-addons' ),
 				'type' => Controls_Manager::URL,
+				'dynamic' => [
+					'active' => true,
+				],
 				'label_block' => false,
 				'placeholder' => esc_html__( 'https://www.your-link.com', 'wpr-addons' ),
 				'condition' => [
@@ -1104,6 +1136,9 @@ class Wpr_Advanced_Slider extends Widget_Base {
 			[
 				'label' => esc_html__( 'Button URL', 'wpr-addons' ),
 				'type' => Controls_Manager::URL,
+				'dynamic' => [
+					'active' => true,
+				],
 				'label_block' => false,
 				'placeholder' => esc_html__( 'https://www.your-link.com', 'wpr-addons' ),
 				'condition' => [

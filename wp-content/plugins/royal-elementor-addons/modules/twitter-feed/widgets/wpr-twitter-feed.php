@@ -60,7 +60,10 @@ class Wpr_Twitter_Feed extends Widget_Base {
 				'type' => Controls_Manager::NUMBER,
 				'default' => 6,
 				'min' => 0,
-				'max' => 6
+				'max' => 6,
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 	}
@@ -669,6 +672,9 @@ class Wpr_Twitter_Feed extends Widget_Base {
             [
                 'label' => esc_html__('Profile Name', 'wpr-addons'),
                 'type' => Controls_Manager::TEXT,
+				'dynamic' => [
+					'active' => true,
+				],
                 'default' => '@elemntor',
                 'label_block' => false,
                 'description' => esc_html__('Use @ sign with your profile name.', 'wpr-addons'),
@@ -704,6 +710,9 @@ class Wpr_Twitter_Feed extends Widget_Base {
             [
                 'label' => esc_html__('Hashtag Name', 'wpr-addons'),
                 'type' => Controls_Manager::TEXTAREA,
+				'dynamic' => [
+					'active' => true,
+				],
                 'label_block' => true,
                 'description' => esc_html__('Enter comma-separated list and remove # sign from your hashtag name', 'wpr-addons'),
             ]
@@ -728,8 +737,11 @@ class Wpr_Twitter_Feed extends Widget_Base {
             [
                 'label' => esc_html__('Consumer Key', 'wpr-addons'),
                 'type' => Controls_Manager::TEXT,
+				'dynamic' => [
+					'active' => true,
+				],
                 'label_block' => false,
-                'default' => 'sOmRR0YaKwg0eyv4hIiEsu5pH',
+                'default' => '',
                 'description' => '<a href="https://apps.twitter.com/app/" target="_blank">Get Consumer Key.</a> Create a new app or select existing app and grab the <b>consumer key.</b>',
             ]
         );
@@ -739,8 +751,11 @@ class Wpr_Twitter_Feed extends Widget_Base {
             [
                 'label' => esc_html__('Consumer Secret', 'wpr-addons'),
                 'type' => Controls_Manager::TEXT,
+				'dynamic' => [
+					'active' => true,
+				],
                 'label_block' => false,
-                'default' => 'Gi4doRTttrEWUuGgjfWTPb0pkxRroBOijN6iNJHtNn2N8uEb47',
+                'default' => '',
                 'description' => '<a href="https://apps.twitter.com/app/" target="_blank">Get Consumer Secret.</a> Create a new app or select existing app and grab the <b>consumer secret.</b>',
             ]
         );
@@ -1200,6 +1215,9 @@ class Wpr_Twitter_Feed extends Widget_Base {
 			[
 				'label' => esc_html__( 'Read More Text', 'wpr-addons' ),
 				'type' => Controls_Manager::TEXT,
+				'dynamic' => [
+					'active' => true,
+				],
 				'default' => 'Read More',
 				'condition' => [
 					'element_select' => [ 'read-more' ],
@@ -1771,6 +1789,9 @@ class Wpr_Twitter_Feed extends Widget_Base {
 			[
 				'label' => esc_html__( 'Load More Text', 'wpr-addons' ),
 				'type' => Controls_Manager::TEXT,
+				'dynamic' => [
+					'active' => true,
+				],
 				'default' => 'Load More',
 			]
 		);
@@ -1780,6 +1801,9 @@ class Wpr_Twitter_Feed extends Widget_Base {
 			[
 				'label' => esc_html__( 'Finish Text', 'wpr-addons' ),
 				'type' => Controls_Manager::TEXT,
+				'dynamic' => [
+					'active' => true,
+				],
 				'default' => 'End of Content.',
 			]
 		);
@@ -4783,8 +4807,6 @@ class Wpr_Twitter_Feed extends Widget_Base {
 			$space_between_mobile = isset($settings['twitter_feed_space_between_mobile']) ? $settings['twitter_feed_space_between_mobile'] : $space_between_mobile_extra;
 			$delay = isset($settings['twitter_feed_delay']) ? $settings['twitter_feed_delay'] : '';
 			$speed = $settings['twitter_feed_speed'];
-
-			// var_dump($slides_to_show, $slides_to_show_widescreen, $slides_to_show_laptop, $slides_to_show_tablet_extra, $slides_to_show_tablet, $slides_to_show_mobile, $settings['twitter_feed_slides_to_show_mobile'] );
 
 			$twitter_settings['carousel'] = [
 				'wpr_cs_navigation' => $navigation,

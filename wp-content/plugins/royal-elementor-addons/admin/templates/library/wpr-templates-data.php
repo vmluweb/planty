@@ -1,5 +1,5 @@
 <?php
-namespace WprAddons\Admin\Templates;
+namespace WprAddons\Admin\Templates\Library;
 
 use WprAddons\Plugin;
 
@@ -8,6 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 class WPR_Templates_Data {
 	public static function get_available_kits() {
 		$is_pro_active = wpr_fs()->can_use_premium_code() && defined('WPR_ADDONS_PRO_VERSION');
+		$is_expert = $is_pro_active && wpr_fs()->is_plan( 'expert' );
 		$is_cf7_active = is_plugin_active('contact-form-7/wp-contact-form-7.php') ? 'true' : 'false';
 		$is_mla_active = is_plugin_active('media-library-assistant/index.php') ? 'true' : 'false';
 		$is_woo_active = is_plugin_active('woocommerce/woocommerce.php') ? 'true' : 'false';
@@ -39,6 +40,20 @@ class WPR_Templates_Data {
 					'price' => $is_pro_active ? 'free' : 'pro',
 					'label' => 'trending',
 					'priority' => 5,
+				],
+			],
+			'ecommerce' => [
+				'v1' => [
+					'name' => 'Ecommerce',
+					'pages' => 'home,shop,single-product,blog,minicart,about,contact,',
+					'plugins' => '{"contact-form-7":'. $is_cf7_active .',"woocommerce":'. $is_woo_active .'}',
+					'tags' => 'shop shopping woo-commerce woocommerce estore store ecommerce product ecommerce shop online boutique clothes eshopping fashion designer market reseller digital purchases',
+					'theme-builder' => true,
+					'woo-builder' => true,
+					'off-canvas' => false,
+					'price' => $is_pro_active ? 'free' : 'pro',
+					'label' => 'new',
+					'priority' => 8,
 				],
 			],
 			'estore' => [
@@ -91,6 +106,7 @@ class WPR_Templates_Data {
 					'woo-builder' => true,
 					'off-canvas' => false,
 					'price' => $is_pro_active ? 'free' : 'pro',
+					'expert' => $is_expert ? 'free' : 'expert',
 					'label' => 'trending',
 					'priority' => 3,
 				],
@@ -804,9 +820,57 @@ class WPR_Templates_Data {
 		$is_pro_active = wpr_fs()->can_use_premium_code() && defined('WPR_ADDONS_PRO_VERSION');
 		
 		return [
+			// 'woo1' => [
+			// 	'name' => 'Food',
+			// 	'pages' => ['home',],
+			// 	'preview' => ['home',],
+			// 	'price' => $is_pro_active ? 'free' : 'pro',
+			// ],
+			'wooshop-v1' => [
+				'name' => 'Woo Shop',
+				'pages' => ['home','shop','about','contact'],
+				'preview' => ['home','shop','about','contact'],
+				'price' => $is_pro_active ? 'free' : 'free',
+			],
+			'fashion-v2' => [
+				'name' => 'Fashion',
+				'pages' => ['home','home-v2','home-v3','shop-v1','shop-v2','shop-v3','blog','about-v1','about-v2','contact-v1','contact-v2','contact-v3',],
+				'preview' => ['home','home-v2','home-v3','shop-fashion-v2','shop-v2','shop-grid-list-view','blog','about','about-v2','contact','contact-v2','contact-v3',],
+				'price' => $is_pro_active ? 'free' : 'pro',
+			],
+			'fashion-v1' => [
+				'name' => 'Fashion',
+				'pages' => ['home','shop-v1','shop-v2','blog','about','faq','contact'],
+				'preview' => ['home','shop-fashion-v1','shop-v2','blog','about','faq','contact'],
+				'price' => $is_pro_active ? 'free' : 'pro',
+			],
+			'woo-food-v1' => [
+				'name' => 'Food Delivery',
+				'pages' => ['home','home-v2','food','about','contact','faq','blog'],
+				'preview' => ['home','home-woo-food-v2','shop-woo-food-v1','about','contact','faq','blog'],
+				'price' => $is_pro_active ? 'free' : 'pro',
+			],
+			'estore-v1' => [
+				'name' => 'Electronic Store',
+				'pages' => ['home','shop','blog','faq','about','contact'],
+				'preview' => ['home','shop','blog','faq','about','contact'],
+				'price' => $is_pro_active ? 'free' : 'pro',
+			],
+			'furniture-shop-v1' => [
+				'name' => 'Furniture Shop',
+				'pages' => ['home','shop-v1','shop-v2','about','contact'],
+				'preview' => ['home','shop-furniture-shop-v1','shop-v2','about','contact'],
+				'price' => $is_pro_active ? 'free' : 'pro',
+			],
+			'grocery-store-v1' => [
+				'name' => 'Grocery Store',
+				'pages' => ['home','shop','about','contact'],
+				'preview' => ['home','shop','about','contact'],
+				'price' => $is_pro_active ? 'free' : 'pro',
+			],
 			'digital-marketing-agency-v1' => [
 				'name' => 'Digital Marketing Agency',
-				'pages' => ['home','seo','branding','marketing','social','about','contact'], // missing: services
+				'pages' => ['home','seo','branding','marketing','social','about','contact'],
 				'preview' => ['home','seo-services','branding','digital-marketing','social-media','about','contact'],
 				'price' => $is_pro_active ? 'free' : 'pro',
 			],
@@ -846,6 +910,24 @@ class WPR_Templates_Data {
 				'preview' => ['home','gallery','services','reviews','about','contact'],
 				'price' => $is_pro_active ? 'free' : 'pro',
 			],
+			'digitalagency-v1' => [
+				'name' => 'Digital Agency',
+				'pages' => ['home','about','services','contact'],
+				'preview' => ['home','about','services','contact'],
+				'price' => $is_pro_active ? 'free' : 'pro',
+			],
+			'digitalagency-v2' => [
+				'name' => 'Digital Agency',
+				'pages' => ['home','about','services','pricing','contact'],
+				'preview' => ['home','about','services','pricing','contact'],
+				'price' => $is_pro_active ? 'free' : 'pro',
+			],
+			'digitalagency-v3' => [
+				'name' => 'Digital Agency',
+				'pages' => ['home','about','blog','contact'],
+				'preview' => ['home','about','blog','contact'],
+				'price' => $is_pro_active ? 'free' : 'free',
+			],
 			// 'ittech-v2' => [ // Problem with links
 			// 	'name' => 'IT Tech',
 			// 	'pages' => ['home','about','services','pricing','faq','contact'],
@@ -863,6 +945,12 @@ class WPR_Templates_Data {
 				'pages' => ['home','about','services','projects','pricing','contact','faq'],
 				'preview' => ['home','about','services','projects','pricing','contact','faq'],
 				'price' => $is_pro_active ? 'free' : 'free',
+			],
+			'digital-marketing-agency-v2' => [
+				'name' => 'Digital Marketing Agency',
+				'pages' => ['home','seo','social','web','email','blog','about','team','contact','pricing1','pricing2','pricing3','casestudy'],
+				'preview' => ['home','search-engine-optimization','social-media-marketing','web-design','email-marketing','blog','about-us','our-team','contact','price-pack-v1','price-pack-v2','price-pack-v3','case-study'],
+				'price' => $is_pro_active ? 'free' : 'pro',
 			],
 			'photographer-v1' => [
 				'name' => 'Photographer Dark',
@@ -882,10 +970,10 @@ class WPR_Templates_Data {
 				'preview' => ['home','dining','rooms','services','history','gallery','contact'],
 				'price' => $is_pro_active ? 'free' : 'pro',
 			],
-			'digitalagency-v2' => [
-				'name' => 'Digital Agency',
-				'pages' => ['home','about','services','pricing','contact'],
-				'preview' => ['home','about','services','pricing','contact'],
+			'digital-seo-marketing-agency-v1' => [
+				'name' => 'Digital SEO Agency',
+				'pages' => ['home','about','services','team','projects','details','pricing','blog','faq','contact'],
+				'preview' => ['home','about','services','team','projects','project-details','pricing','blog','faq','contact'],
 				'price' => $is_pro_active ? 'free' : 'pro',
 			],
 			'fitness-gym-v1' => [
@@ -904,6 +992,12 @@ class WPR_Templates_Data {
 				'name' => 'Pizza Restaurant',
 				'pages' => ['home','menu','about','offer','gallery','contact'],
 				'preview' => ['home','menu','about','offer','gallery','contact'],
+				'price' => $is_pro_active ? 'free' : 'pro',
+			],
+			'digital-marketing-agency-v3' => [
+				'name' => 'Digital Marketing Agency',
+				'pages' => ['home','services','portfolio','blog','about','contact'],
+				'preview' => ['home','services','portfolio','blog','about','contact'],
 				'price' => $is_pro_active ? 'free' : 'pro',
 			],
 			'charity-v1' => [
@@ -955,6 +1049,13 @@ class WPR_Templates_Data {
 				'v7-pro' => ['type' => 'iframe', 'url' => 'woocommerce-grid/v7/'],
 				'v8-pro' => ['type' => 'iframe', 'url' => 'woocommerce-grid/v8/'],
 				'v9-pro' => ['type' => 'iframe', 'url' => 'woocommerce-grid/v9/'],
+			],
+			'form-builder' => [
+				'v1' => ['type' => 'iframe', 'url' => 'form-builder/v1/'],
+				'v2' => ['type' => 'iframe', 'url' => 'form-builder/v2/'],
+				'v3-pro' => ['type' => 'iframe', 'url' => 'form-builder/v3/'],
+				'v4-pro' => ['type' => 'iframe', 'url' => 'form-builder/v4/'],
+				'v5-pro' => ['type' => 'iframe', 'url' => 'form-builder/v5/'],
 			],
 			'media-grid' => [
 				'v1' => ['type' => 'iframe', 'url' => 'image-grid/v1/'],

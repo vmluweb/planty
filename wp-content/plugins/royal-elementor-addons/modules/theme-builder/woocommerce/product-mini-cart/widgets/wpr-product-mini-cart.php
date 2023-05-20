@@ -128,6 +128,9 @@ class Wpr_Product_Mini_Cart extends Widget_Base {
 			[
 				'label' => esc_html__( 'Text', 'wpr-addons' ),
 				'type' => Controls_Manager::TEXT,
+				'dynamic' => [
+					'active' => true,
+				],
 				'placeholder' => esc_html__( 'Cart', 'wpr-addons' ),
 				'default' => esc_html__( 'Cart', 'wpr-addons' ),
 				'condition' => [
@@ -263,7 +266,7 @@ class Wpr_Product_Mini_Cart extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'title_typography',
-                'label' => __( 'Typography', 'my-plugin-domain' ),
+                'label' => __( 'Typography', 'wpr-addons' ),
                 'scheme' => Typography::TYPOGRAPHY_3,
                 'selector' => '{{WRAPPER}} .wpr-mini-cart-toggle-btn, {{WRAPPER}} .wpr-mini-cart-icon-count',
 				'fields_options' => [
@@ -274,11 +277,8 @@ class Wpr_Product_Mini_Cart extends Widget_Base {
 						'default' => [
 							'size' => '13',
 							'unit' => 'px',
-						],
+						]
 					]
-				],
-				'condition' => [
-					'toggle_text!' => 'none'
 				]
             ]
         );
@@ -586,7 +586,7 @@ class Wpr_Product_Mini_Cart extends Widget_Base {
 		$this->add_render_attribute(
 			'mini_cart_attributes',
 			[
-				'data-animation' => wpr_fs()->can_use_premium_code() ? $settings['mini_cart_entrance_speed'] : ''
+				'data-animation' => (wpr_fs()->can_use_premium_code() && isset($settings['mini_cart_entrance_speed'])) ? $settings['mini_cart_entrance_speed'] : ''
 			]
 		);
 
