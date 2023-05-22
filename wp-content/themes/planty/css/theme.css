@@ -67,7 +67,6 @@ li {
   width: 100%;
   height: 80px;
   display: flex;
-  /* flex-wrap: wrap; */
   color: var(--primary-color);
 }
 
@@ -120,14 +119,23 @@ li {
 
 .menu-item a span {
   display: flex;
-  color: var(--main-color);
-  padding: 0 60px;
   align-items: center;
   font-size: 16px;
   font-weight: 400;
 }
 
-.menu-item a span:hover {
+#menu-item-44 a span,
+#menu-item-45 a span {
+  padding: 0 30px;
+  color: var(--main-color);
+}
+
+#menu-item-43 a span {
+  padding: 0 30px;
+}
+
+#menu-item-44 a span:hover,
+#menu-item-45 a span:hover {
   font-weight: 700;
   top: 1px;
   left: 12px;
@@ -143,8 +151,12 @@ li {
 }
 
 #menu-item-43 a span {
-  color: var(--primary-color);
   font-weight: 700;
+  color: var(--primary-color);
+}
+
+#menu-item-44 {
+  order: 1;
 }
 
 #menu-item-45 {
@@ -163,23 +175,23 @@ li {
   justify-content: center;
 }
 
-#menu-item-55 {
+#menu-item-55 a {
   font-size: 16px;
   font-weight: 400;
+  color: var(--main-color);
 }
 
 /**** 03_HOME ****/
 /* Banner */
 .banner {
   background-color: var(--main-bg-color);
-  /* overflow: hidden; */
 }
 
 .bannerTitle {
-  margin: 0 auto;
   font-size: 38px;
   font-weight: 800;
   text-transform: uppercase;
+  margin: 0 auto;
 }
 
 .bannerImage {
@@ -189,9 +201,9 @@ li {
 /* About us */
 #aboutUs {
   width: 100%;
+  text-align: center;
   margin-bottom: 82px;
   padding-bottom: 0px;
-  text-align: center;
 }
 
 /* Products */
@@ -202,15 +214,14 @@ li {
 
 #productsHomeText {
   display: flex;
-  flex: row wrap;
+  flex-direction: row;
   justify-content: center;
   padding-top: 7px;
-  /* padding-bottom: 1.5em; */
 }
 
 #productsSection {
-  background-color: var(--main-bg-color);
   padding-bottom: 40px;
+  background-color: var(--main-bg-color);
 }
 
 #gallery {
@@ -218,22 +229,21 @@ li {
 }
 
 .galleryColumn {
-  background-color: var(--main-bg-color);
   color: var(--primary-color);
+  background-color: var(--main-bg-color);
 }
 
 #productsSectionCallToAction {
-  background-color: var(--main-bg-color);
   color: var(--primary-color);
+  background-color: var(--main-bg-color);
 }
 
 #productsCallToAction {
-  background-color: var(--button-bg-order-color);
   color: var(--primary-color);
+  background-color: var(--button-bg-order-color);
 }
 
 #productsCallToAction:hover {
-  color: var(--primary-color);
   background-color: var(--button-bg-color);
 }
 
@@ -256,6 +266,10 @@ li {
 #meetUs {
   background-color: var(--main-bg-color);
   overflow: hidden;
+}
+
+#meetUsText {
+  background-color: var(--main-bg-color);
 }
 
 #meetUsTitle {
@@ -294,8 +308,8 @@ li {
 #shop,
 #shopImage,
 #shopSubtitle {
-  background-color: var(--secondary-color);
   color: var(--primary-color);
+  background-color: var(--secondary-color);
 }
 
 #shopImage {
@@ -325,10 +339,10 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px 10px 15px 10px;
-  color: var(--main-color);
   font-family: "Inter", sans-serif;
   font-size: 16px;
+  padding: 10px 10px 15px 10px;
+  color: var(--main-color);
 }
 
 .quantitySymbols {
@@ -345,8 +359,8 @@ li {
 
 #plus {
   width: 100%;
-  padding-bottom: 5px;
   text-align: center;
+  padding-bottom: 5px;
   border-bottom: 1px solid var(--primary-color);
 }
 
@@ -357,8 +371,8 @@ li {
 .quantityValidatedButton {
   height: 100%;
   width: 100px;
-  border-radius: 5px;
   text-transform: uppercase;
+  border-radius: 5px;
   color: var(--primary-color);
   background-color: var(--button-bg-order-color);
 }
@@ -371,11 +385,11 @@ li {
 .deliveryInfo {
   width: 100%;
   display: flex;
+  justify-content: space-between;
+  padding-top: 50px;
   margin-top: 40px;
   color: var(--primary-color);
-  justify-content: space-between;
   border-top: 1px solid var(--primary-color);
-  padding-top: 50px;
 }
 
 .deliveryInfoTitles {
@@ -393,16 +407,16 @@ li {
   width: 100%;
   font-size: 20px;
   font-weight: 400;
-  color: var(--main-color);
   padding-left: 10px;
+  color: var(--main-color);
 }
 
 .labelOrderForm {
   display: flex;
   justify-content: start;
-  padding-top: 20px;
   font-size: 20px;
   font-weight: 400;
+  padding-top: 20px;
   overflow: hidden;
 }
 
@@ -415,8 +429,8 @@ li {
 
 #infoColumnLeft {
   width: 50%;
-  border-right: 1px solid var(--primary-color);
   padding-right: 30px;
+  border-right: 1px solid var(--primary-color);
 }
 
 #infoColumnRight {
@@ -425,9 +439,9 @@ li {
 }
 
 #shop-submit {
-  background-color: var(--bg-color);
   margin-top: 64px;
   margin-bottom: 93px;
+  background-color: var(--bg-color);
 }
 
 #shop-submit:hover {
@@ -436,8 +450,8 @@ li {
 
 /* MENTIONS LEGALES */
 #legal {
-  background-color: var(--main-bg-color);
   color: var(--red-color);
+  background-color: var(--main-bg-color);
 }
 
 #legalDetailsColumn {
@@ -459,17 +473,12 @@ li {
   #menu {
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
   }
 
   #menu-principal {
-    width: 100%;
     display: flex;
     word-wrap: normal;
-  }
-
-  #menu-principal .menu-item {
-    width: 100%;
   }
 
   .menu-item a {
@@ -480,8 +489,8 @@ li {
 
   .menu-item a span {
     display: flex;
+    font-size: 14px;
     padding: 0;
-    font-size: 12px;
   }
 
   .bannerTitle {
@@ -516,17 +525,17 @@ li {
   }
 
   .toggleMenu {
-    display: inline-flex;
     float: left;
-    margin: 25px;
+    display: inline-flex;
     font-size: 2em;
+    margin: 25px;
     color: var(--bg-color);
   }
 
   #menu {
     position: relative;
-    background-color: var(--primary-color);
     text-align: center;
+    background-color: var(--primary-color);
   }
 
   #menu ul {
@@ -538,14 +547,14 @@ li {
   }
 
   #menu ul li {
+    min-width: 200px;
     float: none;
     display: block;
     position: relative;
     top: 0;
     right: 0;
-    min-width: 200px;
-    background-color: var(--primary-color);
     text-align: center;
+    background-color: var(--primary-color);
   }
 
   #menu li:after {
@@ -583,13 +592,13 @@ li {
   }
 
   #menu-item-43 a span {
-    color: var(--main-color);
     font-weight: 400;
+    color: var(--main-color);
   }
 
   #menu-item-43 {
-    background-color: var(--bg-color);
     order: 3;
+    background-color: var(--bg-color);
   }
 
   #menu-item-44 {
@@ -602,21 +611,6 @@ li {
 }
 
 /**** 09_LARGE_SCREEN_RESPONSIVE ****/
-@media only screen and (min-width: 1201px) and (max-width: 1440px) {
-}
-
-@media only screen and (min-width: 1201px) and (max-width: 1440px) {
-  .testimonyWrapper {
-    margin: 0 auto;
-  }
-}
-
-@media only screen and (min-width: 1025px) and (max-width: 1200px) {
-  .testimonyWrapper {
-    margin: 0 auto;
-  }
-}
-
 @media only screen and (min-width: 992px) and (max-width: 1024px) {
   #aboutUsTitle {
     margin-top: 4em;
@@ -628,16 +622,12 @@ li {
     margin: 0 auto;
   }
 
-  .quantityWrapper {
+  .quantityWrapper .quantitySymbols {
     height: 46px;
   }
 
   .quantitySelected {
     width: 72px;
-  }
-
-  .quantitySymbols {
-    height: 46px;
   }
 
   .quantityValidatedButton {
@@ -705,6 +695,10 @@ li {
     padding-top: 3em;
   }
 
+  #aboutUsWrapper {
+    padding-bottom: 2em;
+  }
+
   #shopImage {
     display: flex;
     justify-content: center;
@@ -741,16 +735,16 @@ li {
 
   .deliveryInfo {
     width: 100%;
-    font-display: flex;
+    display: flex;
     flex-direction: column;
   }
 
   #infoColumnLeft {
     width: 100%;
-    border-right: none;
-    border-bottom: 1px solid #ffffff;
     padding-right: 0;
     padding-bottom: 50px;
+    border-right: none;
+    border-bottom: 1px solid #ffffff;
   }
 
   #infoColumnRight {
@@ -772,7 +766,12 @@ li {
   }
 
   #productsHomeText {
-    padding-bottom: 30px;
+    padding-bottom: 20px;
+  }
+
+  #productsSection {
+    padding-bottom: 20px;
+    background-color: var(--main-bg-color);
   }
 
   .bannerBottom {
@@ -807,10 +806,10 @@ li {
   }
 
   .deliveryInfo {
-    font-display: flex;
+    width: 80%;
+    display: flex;
     flex-direction: column;
     margin: 0 auto;
-    width: 80%;
   }
 
   .deliveryInfoTitles {
@@ -818,10 +817,10 @@ li {
   }
 
   #infoColumnLeft {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 100%;
     border-right: none;
     border-bottom: 1px solid var(--primary-color);
     padding-right: 0;
@@ -830,7 +829,7 @@ li {
 
   #infoColumnRight {
     width: 100%;
-    padding-left: 0;
     padding-top: 50px;
+    padding-left: 0;
   }
 }
