@@ -125,7 +125,6 @@ li {
   align-items: center;
   font-size: 16px;
   font-weight: 400;
-  /* transition: all ease-in-out 0.1s; */
 }
 
 .menu-item a span:hover {
@@ -173,7 +172,7 @@ li {
 /* Banner */
 .banner {
   background-color: var(--main-bg-color);
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .bannerTitle {
@@ -185,7 +184,6 @@ li {
 
 .bannerImage {
   margin: 0 auto;
-  overflow: hidden;
 }
 
 /* About us */
@@ -196,33 +194,7 @@ li {
   text-align: center;
 }
 
-#aboutUsWrapper {
-  overflow: hidden;
-}
-
-.gallery {
-  column-gap: 30px;
-  margin: 0 auto;
-}
-
 /* Products */
-/* #productsHome {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-  background-color: var(--main-bg-color);
-  border-bottom-left-radius: 50% 9.5%;
-  border-bottom-right-radius: 50% 9.5%;
-  overflow: hidden;
-} */
-
-#productsHome {
-  background-color: var(--main-bg-color);
-  padding-bottom: 49px;
-}
-
 #productsTitle {
   color: var(--red-color);
   background-color: var(--main-bg-color);
@@ -233,31 +205,34 @@ li {
   flex: row wrap;
   justify-content: center;
   padding-top: 7px;
-  padding-bottom: 1.5em;
-}
-
-#productsWrapper {
-  height: auto;
-  width: 100%;
-  display: flex;
-  justify-content: center;
+  /* padding-bottom: 1.5em; */
 }
 
 #productsSection {
   background-color: var(--main-bg-color);
-  padding-bottom: 49px;
+  padding-bottom: 40px;
 }
 
-#productsMainSection {
+#gallery {
   background-color: var(--main-bg-color);
 }
 
-#productsHomeButton {
+.galleryColumn {
+  background-color: var(--main-bg-color);
+  color: var(--primary-color);
+}
+
+#productsSectionCallToAction {
+  background-color: var(--main-bg-color);
+  color: var(--primary-color);
+}
+
+#productsCallToAction {
   background-color: var(--button-bg-order-color);
   color: var(--primary-color);
 }
 
-#productsHomeButton:hover {
+#productsCallToAction:hover {
   color: var(--primary-color);
   background-color: var(--button-bg-color);
 }
@@ -267,98 +242,19 @@ li {
   color: var(--secondary-color);
 }
 
-/* #testimonyTwo div p {
-  width: 100%;
-} */
-
-#testimonyTwoColumnTwo {
-  width: 30%;
-}
-#testimonyTwoColumnTwo:first-child {
-  width: 150px;
-}
-
-#testimonyTwoColumnTwo p {
-  width: 100%;
-}
-
-.testimonyWrapper {
-  margin: 0 auto;
-}
-
-/* .testimonyC > .elementor-widget-wrap {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.wpr-testimonial-job {
-  display: flex;
-  flex-wrap: wrap;
-} */
-/* .testimonyColumn > .elementor-column,
-.testimonyColumn > .wpr-testimonial-content-wrap,
-.testimonyColumn > .elementor-widget-wrap,
-.testimonyColumn > .elementor-element {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.testimonyItem {
-  align-items: center;
-}
-
-.wpr-testimonial-content-wrap {
-  width: 100%;
-}
-.wpr-testimonial-content-inner {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.wpr-testimonial-title {
-  width: 100%;
-  color: var(--secondary-color);
-  margin: 0;
-  text-align: left;
-  margin-left: 0;
-  display: flex;
-  justify-content: flex-start;
-} */
 .testimonySubTitle {
   color: var(--secondary-color);
-}
-
-.wpr-testimonial-item {
-  align-items: center;
 }
 
 .bannerBottom {
   width: 100%;
   padding: 0;
-}
-
-#bannerBottomImage {
-  background-color: var(--main-bg-color);
+  bottom: 0;
 }
 
 /**** 04_MEET_US ****/
-#arbusteSection {
-  background-color: var(--main-bg-color);
-}
-
 #meetUs {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  position: relative;
   background-color: var(--main-bg-color);
-  border-bottom-left-radius: 50% 1.5%;
-  border-bottom-right-radius: 50% 1.5%;
   overflow: hidden;
 }
 
@@ -366,25 +262,9 @@ li {
   color: var(--red-color);
 }
 
-#team {
-  overflow-x: hidden;
-}
-
-#teamRightColumn {
-  overflow: hidden;
-}
-
-#teamBranchImage {
-  overflow: hidden;
-}
-
 #contact {
   background-color: var(--main-bg-color);
 }
-
-/* #contactMainColumnForm {
-  max-width: 393px;
-} */
 
 .labelForm {
   display: flex;
@@ -398,7 +278,6 @@ li {
 }
 
 #form-submit {
-  /* padding: 20px 70px; */
   color: var(--primary-color);
   background-color: var(--bg-color);
 }
@@ -522,7 +401,6 @@ li {
   display: flex;
   justify-content: start;
   padding-top: 20px;
-  /* padding-left: 20px; */
   font-size: 20px;
   font-weight: 400;
   overflow: hidden;
@@ -537,7 +415,7 @@ li {
 
 #infoColumnLeft {
   width: 50%;
-  border-right: 1px solid #ffffff;
+  border-right: 1px solid var(--primary-color);
   padding-right: 30px;
 }
 
@@ -554,6 +432,17 @@ li {
 
 #shop-submit:hover {
   background-color: var(--button-bg-color);
+}
+
+/* MENTIONS LEGALES */
+#legal {
+  background-color: var(--main-bg-color);
+  color: var(--red-color);
+}
+
+#legalDetailsColumn {
+  border-top: 1px solid var(--bg-color);
+  border-bottom: 1px solid var(--bg-color);
 }
 
 /**** 07_MEDIUM_SCREEN_RESPONSIVE_MENU ****/
@@ -643,7 +532,6 @@ li {
   #menu ul {
     display: none;
     position: absolute;
-    /* overflow: auto; */
     top: 80px;
     right: 0;
     z-index: 999;
@@ -724,9 +612,6 @@ li {
 }
 
 @media only screen and (min-width: 1025px) and (max-width: 1200px) {
-  /* #teamBranchImage {
-    right:
-  } */
   .testimonyWrapper {
     margin: 0 auto;
   }
@@ -741,11 +626,6 @@ li {
   #columnsP {
     width: 90%;
     margin: 0 auto;
-  }
-
-  #teamBranchImage {
-    left: 0;
-    right: 0;
   }
 
   .quantityWrapper {
@@ -811,21 +691,6 @@ li {
 }
 
 @media only screen and (min-width: 576px) and (max-width: 767px) {
-  #testimony {
-    width: 100%;
-  }
-
-  #testimonyContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .product .testimonyText p {
-    max-width: 210.65px;
-    margin: 0 auto;
-  }
-
   #columnsP {
     width: 100%;
     margin: 0 auto;
@@ -838,15 +703,6 @@ li {
   #aboutUsTitle {
     width: 100%;
     padding-top: 3em;
-  }
-
-  #sectionIntern {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .im {
-    width: 100%;
   }
 
   #shopImage {
@@ -876,6 +732,7 @@ li {
 
   .quantityValidatedButton {
     width: 150px;
+    margin-left: 10px;
   }
 
   .deliveryInfoTitles {
@@ -925,32 +782,19 @@ li {
     object-fit: contain;
   }
 
-  /* .bannerBottomImage {
-    width: 100%;
-    object-fit: contain;
-    margin: 0;
-    overflow: hidden;
-  } */
-
   #shopImage {
     display: flex;
     justify-content: center;
     margin: 0 auto;
   }
 
-  .shopItemImage {
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-  }
-
   .quantityWrapper {
-    width: 72%;
+    width: 77%;
     margin: 0 auto;
   }
 
   .quantitySelected {
-    width: 200px;
+    width: 150px;
   }
 
   .quantitySymbols {
@@ -959,6 +803,7 @@ li {
 
   .quantityValidatedButton {
     width: 160px;
+    margin-left: 10px;
   }
 
   .deliveryInfo {
@@ -978,7 +823,7 @@ li {
     justify-content: center;
     width: 100%;
     border-right: none;
-    border-bottom: 1px solid #ffffff;
+    border-bottom: 1px solid var(--primary-color);
     padding-right: 0;
     padding-bottom: 50px;
   }
